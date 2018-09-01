@@ -1,5 +1,6 @@
 {
   "name": "dialetus",
+  "author": "Marcus Silva <mvfsillva@gmail.com>",
   "version": "0.0.0",
   "scripts": {
     "dev": "next",
@@ -7,15 +8,21 @@
     "start": "next start",
     "lint": "xo --quiet"
   },
-  "peerDependencies": {
+  "dependencies": {
+    "axios": "latest",
+    "babel-plugin-inline-dotenv": "^1.1.2",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.3",
+    "next": "^6.1.1",
+    "prop-types": "^15.6.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"
   },
-  "dependencies": {
-    "prop-types": "^15.6.2"
-  },
   "devDependencies": {
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^0.14.3",
     "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
     "xo": "^0.22.0"
   },
   "xo": {
