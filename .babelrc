@@ -9,16 +9,10 @@
       "plugins": ["transform-inline-environment-variables"]
     },
     "test": {
-      "presets": [
-        [
-          "next/babel",
-          {
-            "preset-env": {
-              "modules": "commonjs"
-            }
-          }
-        ]
-      ]
+      "presets": [[
+        "next/babel",
+        { "preset-env": { "modules": "commonjs" }}
+      ]]
     }
   }
 }
