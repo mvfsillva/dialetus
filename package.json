@@ -36,8 +36,9 @@
     "*.js": [
       "yarn test",
       "yarn lint",
-      "prettier --semi false --single-quote --write",
+      "prettier --print-width 100 --semi false --single-quote --trailing-comma all --write",
       "git add"
     ]
   }
 }
+
