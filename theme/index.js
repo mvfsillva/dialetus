@@ -33,5 +33,5 @@ export default {
   breakpoints,
   colors,
   fontFamilies,
-  fontWeights,  
+  fontWeights,
 }

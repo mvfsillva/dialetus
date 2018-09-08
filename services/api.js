@@ -9,8 +9,8 @@ import config from '../config'
 const api = axios.create({
   baseURL: config.api.url,
   headers: {
-    Accept: 'application/json'
-  }
+    Accept: 'application/json',
+  },
 })
 
 api.interceptors.request.use(cfg => {
@@ -33,7 +33,7 @@ api.interceptors.response.use(
     }
 
     return Promise.reject(error)
-  }
+  },
 )
 
 export default api
