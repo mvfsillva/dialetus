@@ -52,4 +52,4 @@ const typography = {
   },
 }
 
-export { breakpoints, colors, typography }
+export default { breakpoints, colors, typography }

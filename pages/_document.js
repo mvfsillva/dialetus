@@ -2,7 +2,7 @@ import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
-export default class Mydocument extends Document {
+class Mydocument extends Document {
   static getInitialProps({ renderPage }) {
     const sheet = new ServerStyleSheet()
     const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
@@ -25,3 +25,5 @@ export default class Mydocument extends Document {
     )
   }
 }
+
+export default Mydocument
