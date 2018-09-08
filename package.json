@@ -22,11 +22,12 @@
     "next-routes": "^1.4.2",
     "polished": "^2.0.3",
     "prop-types": "^15.6.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
     "styled-components": "^4.0.0-beta.1"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-jest": "^23.4.2",
     "babel-plugin-inline-dotenv": "^1.1.2",
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
@@ -34,6 +35,7 @@
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^0.14.3",
     "jest": "^23.5.0",
@@ -53,6 +55,14 @@
       "prettier",
       "prettier/react",
       "plugin:react/recommended"
+    ],
+    "plugins": [
+      "jsx-a11y"
+    ],
+    "globals": [
+      "expect",
+      "it",
+      "describe"
     ]
   },
   "lint-staged": {
@@ -64,18 +74,12 @@
   },
   "jest": {
     "verbose": true,
-    "testURL": "http://localhost/",
     "moduleFileExtensions": [
       "js",
       "jsx"
     ],
     "setupFiles": [
       "<rootDir>/config/test/enzyme.theme.js"
-    ],
-    "setupTestFrameworkScriptFile": "<rootDir>/config/test/enzyme.setup.js",
-    "coveragePathIgnorePatterns": [
-      "<rootDir>/build/",
-      "<rootDir>/node_modules/"
     ]
   }
 }
