@@ -5,9 +5,15 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "clean": "rimraf build",
+    "coveralls": "yarn test:coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf coverage",
     "start": "next start",
-    "lint": "xo --quiet && stylelint './src/**/*.js'",
-    "precommit": "lint-staged"
+    "lint": "xo --quiet && stylelint '**/*.js'",
+    "lint:fix": "xo --quiet --write '**/*.js'",
+    "precommit": "lint-staged",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "axios": "latest",
@@ -22,9 +28,14 @@
     "styled-components": "^4.0.0-beta.0"
   },
   "devDependencies": {
+    "babel-jest": "^23.4.2",
+    "babel-preset-jest": "^23.2.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.11.1",
     "husky": "^0.14.3",
+    "jest": "^23.5.0",
     "jest-styled-components": "^6.1.1",
     "lint-staged": "^7.2.2",
     "prettier": "^1.14.2",
@@ -45,10 +56,25 @@
   },
   "lint-staged": {
     "*.js": [
-      "yarn test",
       "yarn lint",
-      "prettier --print-width 100 --semi false --single-quote --trailing-comma all --write",
+      "prettier --semi false --single-quote --print-width 100 --tab-width 2 --trailing-comma all --write",
       "git add"
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "testURL": "http://localhost/",
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "setupFiles": [
+      "<rootDir>/config/test/enzyme.theme.js"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/config/test/enzyme.setup.js",
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/build/",
+      "<rootDir>/node_modules/"
     ]
   }
 }
