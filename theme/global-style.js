@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: Avenir Next, SF UI Display, Helvetica Neue, Helvetica, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    background-color: ${props => props.theme.colors.white};
     color: ${props => props.theme.colors.black};
   }
 `
