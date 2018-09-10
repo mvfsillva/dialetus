@@ -14,5 +14,19 @@
         { "preset-env": { "modules": "commonjs" }}
       ]]
     }
-  }
+  },
+  "plugins": [
+    [ "module-resolver",  {
+      "alias": {
+        "components": "./components",
+        "config": "./config",
+        "container": "./container",
+        "mixins": "./mixins",
+        "pages": "./pages",
+        "services": "./services",
+        "theme": "./theme",
+        "utils": "./utils"
+      }
+    }]
+  ]
 }

@@ -8,11 +8,11 @@ require('jest-styled-components')()
 const shallow = shallowWithTheme(theme)
 const mount = mountWithTheme(theme)
 
-const wrap = (props = {}) =>
-  shallow(<Header headline="headline" dialect="dialect" {...props} />).dive()
+const wrap = (props = {}) => shallow(<Header headline="headline" {...props} />).dive()
 
 describe('[Component: Header]', () => {
   it('mounts component', () => {
+    mount(<Header headline="headline" />)
     mount(<Header headline="headline" dialect="dialect" />)
   })
   it('renders headline when passed in', () => {
