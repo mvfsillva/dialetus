@@ -2,6 +2,8 @@
 
 import React from 'react'
 
-const Home = () => <h1>Dialetus</h1>
+import Header from '../components/header'
+
+const Home = () => <Header headline="Dialetus" dialect="Baianes" />
 
 export default Home
