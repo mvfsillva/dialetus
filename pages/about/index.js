@@ -1,5 +1,6 @@
 import React from 'react'
+import Header from 'components/header'
 
-const About = () => <h1>About </h1>
+const About = () => <Header headline="About" />
 
 export default About
