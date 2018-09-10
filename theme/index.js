@@ -36,9 +36,9 @@ const colors = {
 
 const typography = {
   hero: {
-    fontSize: '44px',
-    lineHeight: '48px',
-    fontWeight: '700',
+    fontSize: '56px',
+    lineHeight: '60px',
+    fontWeight: '300',
   },
   h100: {
     fontSize: '26px',
