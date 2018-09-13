@@ -1,6 +1,7 @@
-import { createGlobalStyle } from 'styled-components'
+import { injectGlobal } from 'styled-components'
 
-const GlobalStyle = createGlobalStyle`
+const injectGlobalStyles = () =>
+injectGlobal`
   * {
     margin: 0;
     padding: 0;
@@ -8,8 +9,23 @@ const GlobalStyle = createGlobalStyle`
     font-family: Avenir Next, SF UI Display, Helvetica Neue, Helvetica, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    background-color: ${props => props.theme.colors.white};
-    color: ${props => props.theme.colors.black};
+    background-color: #fff;
+
+    &::after,
+    &::before {
+      box-sizing: inherit;
+
+    }
+  }
+
+  html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-size-adjust: 100%;
+  }
+
+  a {
+    text-decoration: none;
   }
 `
-export default GlobalStyle
+export default injectGlobalStyles
