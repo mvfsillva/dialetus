@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import If from '.'
 
-describe('[Common: If]', () => {
+describe('[Utils: If]', () => {
   it('Renders children', () => {
     const condition = true
     const component = shallow(
