@@ -2,7 +2,7 @@ import React from 'react'
 import App, { Container } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 import theme from '../theme'
-import GlobalStyle from '../theme/global-style'
+import injectGlobalStyles from '../theme/global-style'
 
 class MyApp extends App {
   static async getInitialProps({ Component, _, ctx }) {
@@ -15,10 +15,12 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps } = this.props
+
+    injectGlobalStyles()
+
     return (
       <ThemeProvider theme={theme}>
         <Container>
-          <GlobalStyle />
           <Component {...pageProps} />
         </Container>
       </ThemeProvider>
