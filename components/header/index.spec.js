@@ -1,9 +1,10 @@
 import React from 'react'
 import { shallowWithTheme, mountWithTheme } from '../../config/test/enzyme.theme'
+
 import theme from '../../theme'
 import Header from '.'
 
-require('jest-styled-components')()
+import 'jest-styled-components'
 
 const shallow = shallowWithTheme(theme)
 const mount = mountWithTheme(theme)
