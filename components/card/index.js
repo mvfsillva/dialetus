@@ -1,11 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { transitions } from 'polished'
 import { transition } from 'mixins/transition'
 
 const Panel = styled.div`
-  width: 320px;
-  height: 380px;
+  width: ${p => p.width}px;
+  height: ${p => p.height}px;
   background-color: ${p => p.theme.colors.white};
   border: 1px solid ${p => p.theme.colors.gray.lighter};
   box-shadow: ${p => p.theme.colors.shadow.small};
@@ -24,8 +25,13 @@ const Panel = styled.div`
   }
 `
 
-const Card = () => (
-  <Panel>card</Panel>
+const Card = ({ children, width, height }) => (
+  <Panel width={width} height={height}>{children}</Panel>
 )
+
+Card.propTypes = {
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+}
 
 export default Card
