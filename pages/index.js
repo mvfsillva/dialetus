@@ -3,7 +3,14 @@
 import React from 'react'
 
 import Header from 'components/header'
+import ListCard from 'container/list-card'
 
-const Home = () => <Header headline="Dialetus" dialect="Baianes" />
+const Home = () => (
+  <div>
+    <Header headline="Dialetus" dialect="Baianes" />
+    <br />
+    <ListCard />
+  </div>
+)
 
 export default Home
