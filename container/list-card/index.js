@@ -16,7 +16,7 @@ const Container = styled.div`
 const ListCard = ({ data }) => (
   <Container>
     {data.map((i) => (
-      <Card key={i} width={320} height={420}>Barril Dobrado</Card>
+      <Card key={i} size="medium">Barril Dobrado</Card>
     ))}
   </Container>
 )
