@@ -10,5 +10,8 @@ const mount = mountWithTheme(theme)
 describe('[Component: Card]', () => {
   it('mounts component', () => {
     mount(<Card />)
+    mount(<Card size="small"/>)
+    mount(<Card size="medium"/>)
+    mount(<Card size="large"/>)
   })
 })
