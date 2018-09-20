@@ -18,7 +18,7 @@
   "dependencies": {
     "axios": "latest",
     "classnames": "^2.2.6",
-    "next": "^6.1.1",
+    "next": "^7.0.0",
     "next-routes": "^1.4.2",
     "polished": "^2.0.3",
     "prop-types": "^15.6.2",
