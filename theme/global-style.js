@@ -26,5 +26,15 @@ injectGlobal`
   a {
     text-decoration: none;
   }
+
+  .brazil {
+    cursor: pointer;
+    fill: #FFFFFF;
+  }
+
+  .brazil:hover {
+    fill: #000000;
+    transition: 0.1s linear;
+  }
 `
 export default injectGlobalStyles
