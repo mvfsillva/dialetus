@@ -11,7 +11,6 @@ const StyledHeader = styled.header`
   justify-content: center;
   align-self: center;
   align-items: center;
-  border: 1px solid;
 `
 const StyledTitle = styled.h1`
   ${p => p.theme.typography.hero};
