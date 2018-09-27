@@ -1,22 +1,25 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import styled from 'styled-components'
 
 import Header from 'components/header'
-import ListCard from 'container/list-card'
 import Brazil from 'components/brazil'
+import Footer from 'components/footer'
 
-const Container = styled.div`
+const Main = styled.main`
+  height: 70vh;
   display: flex;
   justify-content: center;
-  align-self: center;
   align-items: center;
-  margin: 50px;
 `
 
 const Home = () => (
-  <Container>
-    <Brazil />
-  </Container>
+  <Fragment>
+    <Header headline="Dialetos pelo Brasil" />
+    <Main>
+      <Brazil />
+    </Main>
+    <Footer />
+  </Fragment>
 )
 
 export default Home
