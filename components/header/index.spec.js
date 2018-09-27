@@ -1,7 +1,6 @@
 import React from 'react'
-import { shallowWithTheme, mountWithTheme } from '../../config/test/enzyme.theme'
-
-import theme from '../../theme'
+import { shallowWithTheme, mountWithTheme } from 'config/test/enzyme.theme'
+import theme from 'theme'
 import Header from '.'
 
 import 'jest-styled-components'
