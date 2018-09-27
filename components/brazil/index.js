@@ -5,23 +5,23 @@ class Brazil extends Component {
   constructor() {
     super()
     this.state = {
-      stateSelected: '',
-      stateHover: ''
+      stateUF: '',
+      stateName: ''
     }
     autoBind.react(this)
   }
 
   onClick (e) {
     const { id } = e.target
-    this.setState({ stateSelected: id })
+    this.setState({ stateUF: id })
   }
 
   onMouseOver (e) {
-    console.log(e.target)
+    const stateName = e.target.getAttribute('name')
+    this.setState({ stateName })
   }
 
   render() {
-    const { stateSelected, stateHover } = this.state
 
     return (
       <svg width="430" height="420" xmlns="http://www.w3.org/2000/svg">
