@@ -1,5 +1,3 @@
-'use strict'
-
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 import { shallow, mount } from 'enzyme'

@@ -1,5 +1,3 @@
-'use strict'
-
 import { darken, lighten } from 'polished'
 
 // @media screen and (min-width: 36em) - 576px
