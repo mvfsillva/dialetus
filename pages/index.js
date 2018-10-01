@@ -1,9 +1,27 @@
-import React, { Fragment } from 'react'
+import React, { PureComponent, Fragment } from 'react'
 import styled from 'styled-components'
 
 import Header from 'components/header'
 import Brazil from 'components/brazil'
 import Footer from 'components/footer'
+
+import { Router } from '../routes'
+
+class Home extends PureComponent {
+  getDialect = region =>  Router.pushRoute('dialect', { slug: region })
+
+  render () {
+    return (
+      <Fragment>
+        <Header headline="Dialetos Brasileiros" />
+        <Main>
+          <Brazil handleSelected={this.getDialect} />
+        </Main>
+        <Footer />
+      </Fragment>
+    )
+  }
+}
 
 const Main = styled.main`
   height: 70vh;
@@ -11,15 +29,5 @@ const Main = styled.main`
   justify-content: center;
   align-items: center;
 `
-
-const Home = () => (
-  <Fragment>
-    <Header headline="Dialetos pelo Brasil" />
-    <Main>
-      <Brazil />
-    </Main>
-    <Footer />
-  </Fragment>
-)
 
 export default Home
