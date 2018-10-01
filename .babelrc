@@ -17,7 +17,7 @@
       "alias": {
         "components": "./components",
         "config": "./config",
-        "container": "./container",
+        "containers": "./containers",
         "mixins": "./mixins",
         "pages": "./pages",
         "services": "./services",
