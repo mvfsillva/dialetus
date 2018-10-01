@@ -1,22 +1,33 @@
 import React, { PureComponent, Fragment } from 'react'
-import autoBind from 'auto-bind'
+import PropTypes from 'prop-types'
 import ReactTooltip from 'react-tooltip'
 
 class Brazil extends PureComponent {
-  constructor (props) {
-    super(props)
-    this.state = {
-      stateId: '',
-      stateName: ''
-    }
-    autoBind.react(this)
+  static propTypes = {
+    handleSelected: PropTypes.func.isRequired,
   }
 
-  onMouseOver (e) {
+  constructor () {
+    super()
+    this.state = {
+      stateId: '',
+      stateName: '',
+      language: ''
+    }
+  }
+
+  onMouseOver = e => {
     const stateName = e.target.getAttribute('name')
     const stateId = e.target.id
-
     this.setState({ stateName, stateId })
+  }
+
+  onClick = e => {
+    const { handleSelected } = this.props
+    const language = e.target.getAttribute('language')
+
+    handleSelected(language)
+    this.setState({ language })
   }
 
   render() {
@@ -28,7 +39,7 @@ class Brazil extends PureComponent {
           <span>{stateName}</span>
         </ReactTooltip>
         <svg width="430" height="420" xmlns="http://www.w3.org/2000/svg">
-          <g onMouseOver={this.onMouseOver} data-tip="React-tooltip">
+          <g onClick={this.onClick} onMouseOver={this.onMouseOver} data-tip="React-tooltip">
             <polygon fill="#F3F3F3" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="319.646,163.646 319.099,164.092 320.047,163.646 320.246,163.147 319.696,162.899" />
             <g>
               <polygon className="brazil" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="262.933,59.372 262.634,58.974 262.284,59.77 262.385,60.018" />
@@ -64,7 +75,7 @@ class Brazil extends PureComponent {
                 232.13,299.988 231.682,300.436 231.032,300.635 231.432,301.877 230.782,302.822 230.981,303.32 230.633,304.363
                 231.731,303.369 231.58,302.922 232.38,301.828 232.031,301.332 233.029,300.686"
               />
-              <polygon id="MG" name="Minas Gerais" className="brazil" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="
+              <polygon id="MG" name="Minas Gerais" language="mineires" className="brazil" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="
                 248.729,178.317 247.68,179.172 248.918,181.266 248.062,182.216 246.159,181.266 244.353,183.167 246.159,184.404
                 244.826,185.83 246.159,187.733 245.303,189.541 243.876,190.873 242.067,192.205 241.782,193.916 240.261,194.393
                 239.975,196.01 242.258,197.816 242.163,200.102 240.545,202.004 239.118,202.383 239.118,204.764 241.498,203.811
@@ -111,7 +122,7 @@ class Brazil extends PureComponent {
                 251.012,153.01 250.63,151.868 251.867,151.107 251.772,149.681 250.726,149.204 249.298,149.3 247.586,147.396 248.632,145.779
                 250.535,144.066 250.059,141.117 253.866,140.261 254.722,138.643 250.819,137.312"
               />
-              <polygon id="RJ" name="Rio de Janeiro" className="brazil" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="
+              <polygon id="RJ" name="Rio de Janeiro" language="carioques" className="brazil" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="
                 293.158,239.49 290.874,235.969 287.545,236.396 286.831,237.537 288.259,239.25 286.118,240.965 286.118,244.104
                 284.119,245.814 282.265,244.531 278.269,247.242 273.272,247.385 265.853,249.383 265.853,252.998 262.428,257.945
                 263.199,259.527 263.798,260.291 266.761,260.059 267.027,259.23 268.092,259.164 267.027,258.633 266.062,258.898
@@ -136,7 +147,7 @@ class Brazil extends PureComponent {
                 258.474,264.832 258.606,264.336 259.072,264.234 259.339,263.572 258.807,263.539 258.74,262.977 259.506,262.082
                 260.57,262.182 261.302,260.988 263.199,259.527 262.428,257.945"
               />
-              <polygon id="BA" name="Bahia" className="brazil" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="
+              <polygon id="BA" name="Bahia" language="baianes" className="brazil" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="
                 327.932,147.063 324.364,145.493 326.077,143.068 327.932,142.497 328.217,139.5 324.221,137.646 324.078,136.075
                 325.648,134.363 324.364,131.508 323.079,128.797 321.653,127.37 319.654,127.227 319.226,125.799 317.514,125.799
                 315.372,123.944 312.519,124.23 310.521,125.799 308.809,126.085 308.095,128.511 305.812,130.794 303.527,131.081
@@ -208,7 +219,7 @@ class Brazil extends PureComponent {
                 230.732,296.756 230.184,296.707 230.033,295.762 230.533,294.867 229.783,294.619 229.634,292.777 230.083,290.689
                 229.285,289.496 228.535,289.695 227.786,289.545 228.685,288.998 227.837,287.955 229.034,288.75 230.233,287.793
                 228.248,287.129" />
-              <polygon id="PR" name="Paraná" className="brazil" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="
+              <polygon id="PR" name="Paraná" language="paranes" className="brazil" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="
                 234.456,277.734 235.218,274.689 232.173,276.213 229.318,273.357 228.368,269.744 224.942,269.172 221.898,269.363
                 220.375,266.127 220.757,263.463 220.945,258.326 218.663,256.424 212.384,257.186 207.056,254.33 203.061,254.33 202.109,254.33
                 201.158,252.809 199.635,253.189 196.591,253.949 193.356,254.141 190.407,253.475 186.887,256.709 185.364,259.564
@@ -392,7 +403,7 @@ class Brazil extends PureComponent {
                 332.641,136.218 335.496,136.218 338.778,139.356 339.314,141.237 342.246,138.369 342.312,137.042 345.975,133.86
                 345.975,132.866 346.44,133.396 347.238,132.666 346.905,132.07 347.505,132.467 348.57,130.479 351.398,125.805 347.197,124.516"
               />
-              <polygon id="RN" name="Rio Grande do Norte" className="brazil" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="
+              <polygon id="RN" name="Rio Grande do Norte" language="potiguares" className="brazil" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="
                 328.073,101.539 330.785,99.113 333.64,99.684 332.784,101.824 331.356,101.824 329.645,104.965 331.356,104.821 331.499,106.677
                 335.352,105.678 335.78,107.676 338.492,106.677 337.636,103.537 340.918,102.109 341.917,103.965 344.057,102.681
                 347.911,103.965 351.648,103.03 350.3,99.351 350.15,99.202 350.55,98.555 349.7,95.423 347.754,93.533 343.96,92.539
@@ -421,7 +432,7 @@ class Brazil extends PureComponent {
                 333.782,128.939 334.782,130.366 337.351,128.797 340.49,129.225 341.489,125.799 343.915,126.656 347.197,124.516
                 351.398,125.805 353.296,118.396 353.845,112.528"
               />
-              <polygon id="RO" name="Rondônia" className="brazil" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="
+              <polygon id="RO" name="Rondônia" language="rondones" className="brazil" stroke="#000000" strokeLinecap="round" strokeLinecap="round" strokeMiterlimit="10" points="
                 124.569,162.477 127.71,161.478 127.138,158.908 128.852,157.48 126.139,151.773 127.71,149.204 126.853,145.637 122.429,144.78
                 117.862,145.493 116.579,143.21 113.867,142.354 113.438,138.073 115.008,132.364 113.438,129.082 114.58,126.371
                 112.012,124.087 108.158,124.087 103.734,121.661 101.308,117.666 96.599,117.666 93.744,119.521 91.604,122.232 91.604,124.944
