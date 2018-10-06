@@ -17,7 +17,7 @@ class Dialect extends PureComponent {
 
     return (
       <Fragment>
-        <Header headline="Bem vindo ao" dialect={dialect} />
+        <Header headline={dialect} uppercase />
         <ListCard data={dialects} />
         <Footer />
       </Fragment>
