@@ -7,8 +7,15 @@ import Footer from 'components/footer'
 
 import { Router } from '../routes'
 
+const Main = styled.main`
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
 class Home extends PureComponent {
-  getDialect = region =>  Router.pushRoute('dialect', { slug: region })
+  getDialect = region => Router.pushRoute('dialect', { slug: region })
 
   render () {
     return (
@@ -22,12 +29,5 @@ class Home extends PureComponent {
     )
   }
 }
-
-const Main = styled.main`
-  height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
 
 export default Home
