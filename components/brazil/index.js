@@ -1,13 +1,10 @@
 import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import ReactTooltip from 'react-tooltip'
-import BrazilSvg from './brazilSvg'
+
+import BrazilSvg from './assets/brazil-svg'
 
 class Brazil extends PureComponent {
-  static propTypes = {
-    handleSelected: PropTypes.func.isRequired,
-  }
-
   constructor () {
     super()
     this.state = {
@@ -17,9 +14,7 @@ class Brazil extends PureComponent {
     }
   }
 
-  onMouseOver = (stateId, stateName) => {
-    this.setState(() => ({ stateName, stateId }))
-  }
+  onMouseOver = (stateId, stateName) => this.setState({ stateName, stateId })
 
   onClick = language => {
     this.props.handleSelected(language)
@@ -43,6 +38,10 @@ class Brazil extends PureComponent {
       </Fragment>
     )
   }
+}
+
+Brazil.propTypes = {
+  handleSelected: PropTypes.func.isRequired,
 }
 
 export default Brazil
