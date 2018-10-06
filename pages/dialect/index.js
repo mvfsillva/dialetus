@@ -8,17 +8,17 @@ import ListCard from 'containers/list-card'
 
 class Dialect extends PureComponent {
   static async getInitialProps (ctx) {
-    const { dialetus } = await api('/dialect')
-    console.log(dialetus)
-    return { dialetus, dialect: ctx.query.slug }
+    const data = await api(`/dialect/${ctx.query.slug}`)
+    return { dialect: ctx.query.slug, dialects: data }
   }
+
   render () {
-    const { dialect } =  this.props
+    const { dialects, dialect } =  this.props
 
     return (
       <Fragment>
         <Header headline="Bem vindo ao" dialect={dialect} />
-        <ListCard />
+        <ListCard data={dialects} />
         <Footer />
       </Fragment>
     )
