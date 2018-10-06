@@ -17,6 +17,7 @@ const StyledTitle = styled.h1`
   color: ${p => p.theme.colors.black.darker};
   letter-spacing: 5px;
   font-weight: 100;
+  text-transform: ${p => p.uppercase ? 'uppercase' : 'captilize'};
 
   span {
     color: ${p => p.theme.colors.gray.lighter};
@@ -25,9 +26,9 @@ const StyledTitle = styled.h1`
   }
 `
 
-const Header = ({ headline, dialect }) => (
+const Header = ({ headline, dialect, uppercase }) => (
   <StyledHeader>
-    <StyledTitle>
+    <StyledTitle uppercase={uppercase}>
       {headline}<If test={!!dialect}>:<span>{dialect}</span></If>
     </StyledTitle>
   </StyledHeader>
@@ -36,6 +37,11 @@ const Header = ({ headline, dialect }) => (
 Header.propTypes = {
   headline: PropTypes.string.isRequired,
   dialect: PropTypes.string,
+  uppercase: PropTypes.bool,
+}
+
+Header.defaultProps = {
+  uppercase: false,
 }
 
 export default Header
