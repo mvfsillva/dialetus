@@ -27,7 +27,8 @@
     "react-dom": "^16.5.0",
     "react-extras": "^0.7.1",
     "react-tooltip": "^3.8.4",
-    "styled-components": "^3.4.6"
+    "styled-components": "^3.4.6",
+    "sweetalert2": "^7.28.4"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
