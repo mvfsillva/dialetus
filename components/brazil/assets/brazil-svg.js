@@ -2,19 +2,20 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components';
 
+const States = styled.g`
+  > path {
+    fill: ${p => p.theme.colors.white};
+    stroke:${p => p.theme.colors.black.dark};
+    stroke-width: 1px;
+    cursor: pointer;
+    &.active,
+    &:hover {
+      fill: ${p => p.theme.colors.black};
+    }
+  }
+`
+
 class BrazilSvg extends PureComponent {
-  static propTypes = {
-    onSelect: PropTypes.func.isRequired,
-    onMouseOver: PropTypes.func.isRequired,
-    width: PropTypes.number,
-    height: PropTypes.number,
-  }
-
-  static defaultProps = {
-    width: 420,
-    height: 420,
-  }
-
   handleOnClick = ({ target }) => {
     this.props.onSelect(target.getAttribute('language'))
   }
@@ -62,16 +63,17 @@ class BrazilSvg extends PureComponent {
   }
 }
 
-const States = styled.g`
-  > path {
-    fill: #E7E7E7;
-    stroke: #999;
-    stroke-width: 1px;
-    &.active,
-    &:hover {
-      fill: #666;
-    }
-  }
-`
+
+BrazilSvg.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  onMouseOver: PropTypes.func.isRequired,
+  width: PropTypes.number,
+  height: PropTypes.number,
+}
+
+BrazilSvg.defaultProps = {
+  width: 420,
+  height: 420,
+}
 
 export default BrazilSvg
