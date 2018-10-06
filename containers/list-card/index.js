@@ -11,12 +11,14 @@ const Container = styled.div`
   margin: auto;
   justify-content: center;
   align-items: center;
+
+  margin-bottom: 10rem;
 `
 
 const ListCard = ({ data }) => (
   <Container>
     {data.map(({ dialect, meanings, examples  }) => (
-      <Card key={dialect} size="medium">{dialect}</Card>
+      <Card key={dialect} size="small">{dialect}</Card>
     ))}
   </Container>
 )
