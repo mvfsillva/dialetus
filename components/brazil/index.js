@@ -1,6 +1,7 @@
 import React, { PureComponent, Fragment } from 'react'
 import PropTypes from 'prop-types'
 import ReactTooltip from 'react-tooltip'
+import swal from 'sweetalert2'
 
 import BrazilSvg from './assets/brazil-svg'
 
@@ -17,8 +18,21 @@ class Brazil extends PureComponent {
   onMouseOver = (stateId, stateName) => this.setState({ stateName, stateId })
 
   onClick = language => {
+    if (language === null)
+      return this.infoAlert()
+
     this.props.handleSelected(language)
     this.setState({ language })
+  }
+
+  infoAlert = () => {
+    swal({
+      type: 'info',
+      title: `${this.state.stateName}`,
+      text: `Ainda não temos o dialeto dessa região`,
+      footer: '<a href="https://github.com/mvfsillva/dialetus-service">Abra uma issue ou nos envie um PR 😆</a>',
+      confirmButtonColor: '#000'
+    })
   }
 
   render() {
