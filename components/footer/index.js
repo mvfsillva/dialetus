@@ -6,7 +6,7 @@ import { transitions } from 'polished'
 import { transition } from 'mixins/transition'
 
 const StyledFooter = styled.footer`
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100px;
   background: ${p => p.theme.colors.white};
