@@ -14,7 +14,7 @@ const Panel = styled.div`
   justify-content: center;
   padding: 10px;
   ${transitions(transition({ property: 'box-shadow', duration: '950ms' }))};
-
+  cursor: pointer;
   margin: 20px;
   text-align: center;
 
