@@ -15,18 +15,14 @@ const Container = styled.div`
 
 const ListCard = ({ data }) => (
   <Container>
-    {data.map((i) => (
-      <Card key={i} size="medium">Barril Dobrado</Card>
+    {data.map(({ dialect, meanings, examples  }) => (
+      <Card key={dialect} size="medium">{dialect}</Card>
     ))}
   </Container>
 )
 
 ListCard.propTypes = {
-  data: PropTypes.array
-}
-
-ListCard.defaultProps = {
-  data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  data: PropTypes.array.isRequired
 }
 
 export default ListCard
