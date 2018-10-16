@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 
 const RightArrow = styled.span`
   font-size: 2rem;
-  color: #7e7e7e;
+  color: ${ p => p.theme.colors.gray.darker };
 
   ${props => props.right && css`
     &::after {
