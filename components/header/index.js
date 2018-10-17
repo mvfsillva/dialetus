@@ -1,7 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { withRouter } from 'next/router'
 import If from 'utils/if'
+
+import BackArrow from '../backHome'
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -26,11 +29,30 @@ const StyledTitle = styled.h1`
   }
 `
 
-const Header = ({ headline, dialect, uppercase }) => (
+const Wrapper = styled.div`
+  display: flex;
+`
+
+const ContainerTitle = styled.div`
+  position: relative;
+`
+
+const ContainerArrow = styled.div`
+  position: absolute;
+  right: 1rem;
+  margin-top: 0.5rem;
+`
+
+const Header = ({ headline, dialect, uppercase, router: { pathname } }) => (
   <StyledHeader>
-    <StyledTitle uppercase={uppercase}>
-      {headline}<If test={!!dialect}>:<span>{dialect}</span></If>
-    </StyledTitle>
+    <Wrapper>
+      <ContainerTitle>
+        <StyledTitle uppercase={ uppercase }>
+          { headline }<If test={ !!dialect }>:<span>{ dialect }</span></If>
+        </StyledTitle>
+      </ContainerTitle>
+      { pathname !== '/' && <ContainerArrow><BackArrow /></ContainerArrow> }
+    </Wrapper>
   </StyledHeader>
 )
 
@@ -38,10 +60,13 @@ Header.propTypes = {
   headline: PropTypes.string.isRequired,
   dialect: PropTypes.string,
   uppercase: PropTypes.bool,
+  router: PropTypes.shape({
+    pathname: PropTypes.string
+  })
 }
 
 Header.defaultProps = {
   uppercase: false,
 }
 
-export default Header
+export default withRouter(Header)
