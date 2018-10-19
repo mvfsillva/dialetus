@@ -2,9 +2,9 @@ import React from 'react'
 import { bool } from 'prop-types'
 import styled, { css } from 'styled-components'
 
-const RightArrow = styled.span`
+const StyledArrow = styled.span`
   font-size: 2rem;
-  color: ${ p => p.theme.colors.gray.darker };
+  color: ${p => p.theme.colors.gray.darker};
 
   ${props => props.right && css`
     &::after {
@@ -19,7 +19,7 @@ const RightArrow = styled.span`
   `}
 `
 
-const Arrow = ({ right, left }) => <RightArrow right={ right } left={ left } />
+const Arrow = ({ right, left }) => <StyledArrow right={right} left={left} />
 
 Arrow.propTypes = {
   right: bool,
