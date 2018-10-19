@@ -42,7 +42,7 @@ const HiperLink = styled.a`
 `
 
 const ContainerArrow = styled.div`
-  position: absolute;
+  position: fixed;
   left: 1rem;
   margin-top: 0.5rem;
 `
@@ -64,8 +64,8 @@ const Header = ({ headline, dialect, uppercase, router: { pathname } }) => (
         </ContainerArrow>
       </If>
       <ContainerTitle>
-        <StyledTitle uppercase={ uppercase }>
-          { headline }<If test={ !!dialect }>:<span>{ dialect }</span></If>
+        <StyledTitle uppercase={uppercase}>
+          { headline }<If test={!!dialect}>:<span>{ dialect }</span></If>
         </StyledTitle>
       </ContainerTitle>
     </Wrapper>
