@@ -6,6 +6,6 @@ module.exports = {
   poweredByHeader: false,
   generateBuildId: async () => pkg.version,
   publicRuntimeConfig: {
-    API_URL: 'https://dialetus-service.now.sh',
+    API_URL: process.env.API_URL,
   }
 }
