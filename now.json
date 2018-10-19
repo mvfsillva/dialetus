@@ -1,3 +1,6 @@
 {
-	"alias": "dialetus"
+	"alias": "dialetus",
+	"env": {
+		"API_URL": "https://dialetus-service.now.sh"
+	}
 }
