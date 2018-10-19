@@ -2,9 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { withRouter } from 'next/router'
+import Link from 'next/link'
+import Arrow from 'components/arrow'
 import If from 'utils/if'
-
-import BackArrow from '../backHome'
 
 const StyledHeader = styled.header`
   width: 100%;
@@ -36,22 +36,38 @@ const Wrapper = styled.div`
 const ContainerTitle = styled.div`
   position: relative;
 `
+const HiperLink = styled.a`
+  text-decoration: none;
+  cursor: pointer;
+`
 
 const ContainerArrow = styled.div`
   position: absolute;
-  right: 1rem;
+  left: 1rem;
   margin-top: 0.5rem;
 `
+
+const BackArrow = () => (
+  <Link href='/'>
+    <HiperLink>
+      <Arrow right />
+    </HiperLink>
+  </Link>
+)
 
 const Header = ({ headline, dialect, uppercase, router: { pathname } }) => (
   <StyledHeader>
     <Wrapper>
+      <If test={pathname !== '/'}>
+        <ContainerArrow>
+          <BackArrow />
+        </ContainerArrow>
+      </If>
       <ContainerTitle>
         <StyledTitle uppercase={ uppercase }>
           { headline }<If test={ !!dialect }>:<span>{ dialect }</span></If>
         </StyledTitle>
       </ContainerTitle>
-      { pathname !== '/' && <ContainerArrow><BackArrow /></ContainerArrow> }
     </Wrapper>
   </StyledHeader>
 )
