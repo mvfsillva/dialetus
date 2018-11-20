@@ -22,7 +22,8 @@
         "pages": "./pages",
         "services": "./services",
         "theme": "./theme",
-        "utils": "./utils"
+        "utils": "./utils",
+        "layouts": "./layouts"
       }
     }]
   ]
