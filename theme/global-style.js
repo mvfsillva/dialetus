@@ -1,7 +1,6 @@
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
 
-const injectGlobalStyles = () =>
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
@@ -26,15 +25,5 @@ injectGlobal`
   a {
     text-decoration: none;
   }
-
-  .brazil {
-    cursor: pointer;
-    fill: #FFFFFF;
-  }
-
-  .brazil:hover {
-    fill: #000000;
-    transition: 0.1s linear;
-  }
 `
-export default injectGlobalStyles
+export default GlobalStyle

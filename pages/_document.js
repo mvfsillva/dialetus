@@ -1,29 +1,39 @@
-import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
-class Mydocument extends Document {
-  static getInitialProps({ renderPage }) {
+import GlobalStyle from 'theme/global-style'
+
+class MyDocument extends Document {
+  static async getInitialProps (ctx) {
     const sheet = new ServerStyleSheet()
-    const page = renderPage(App => props => sheet.collectStyles(<App {...props} />))
-    const styleTags = sheet.getStyleElement()
-    return { ...page, styleTags }
+
+    const originalRenderPage = ctx.renderPage
+    ctx.renderPage = () => originalRenderPage({
+      enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+    })
+
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps, styles: [...initialProps.styles, ...sheet.getStyleElement()] }
   }
 
-  render() {
+  render () {
     return (
-      <html lang="pt-br">
+      <html>
         <Head>
-          <title>Dialetos Brasileiros</title>
-          {this.props.styleTags}
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta charSet="utf-8" />
+          <link rel="apple-touch-icon" href="/static/icon.png" />
+          <link rel="icon" href="/static/icon.png" type="image/png" />
         </Head>
         <body>
+          <GlobalStyle />
           <Main />
           <NextScript />
         </body>
       </html>
     )
   }
+
 }
 
-export default Mydocument
+export default MyDocument
