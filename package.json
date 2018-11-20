@@ -19,7 +19,7 @@
     "auto-bind": "^1.2.1",
     "axios": "latest",
     "classnames": "^2.2.6",
-    "next": "^7.0.0",
+    "next": "^7.0.2",
     "next-routes": "^1.4.2",
     "polished": "^2.0.3",
     "prop-types": "^15.6.2",
@@ -27,7 +27,7 @@
     "react-dom": "^16.5.0",
     "react-extras": "^0.7.1",
     "react-tooltip": "^3.8.4",
-    "styled-components": "^3.4.6",
+    "styled-components": "^4.1.1",
     "sweetalert2": "^7.28.4"
   },
   "devDependencies": {
