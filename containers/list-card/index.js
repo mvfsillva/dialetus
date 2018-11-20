@@ -1,7 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+
 import Card from 'components/card'
+import Section from 'layouts/section'
+
 
 const Container = styled.div`
   width: 80%;
@@ -16,11 +19,13 @@ const Container = styled.div`
 `
 
 const ListCard = ({ data }) => (
-  <Container>
-    {data.map(({ dialect, meanings, examples  }) => (
-      <Card key={dialect} size="small">{dialect}</Card>
-    ))}
-  </Container>
+  <Section>
+    <Container>
+      {data.map(({ dialect, meanings, examples }) => (
+        <Card key={dialect} size="small">{dialect}</Card>
+      ))}
+    </Container>
+  </Section>
 )
 
 ListCard.propTypes = {
