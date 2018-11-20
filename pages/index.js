@@ -5,13 +5,16 @@ import Header from 'components/header'
 import Brazil from 'components/brazil'
 import Footer from 'components/footer'
 
+import Section from 'layouts/section'
+
 import { Router } from '../routes'
 
 const Main = styled.main`
-  height: 70vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+
+  padding-top: 56px;
+  padding-bottom: 56px;
 `
 
 class Home extends PureComponent {
@@ -19,13 +22,12 @@ class Home extends PureComponent {
 
   render () {
     return (
-      <Fragment>
+      <Section>
         <Header headline="Dialetos Brasileiros" />
         <Main>
           <Brazil handleSelected={this.getDialect} />
         </Main>
-        <Footer />
-      </Fragment>
+      </Section>
     )
   }
 }
