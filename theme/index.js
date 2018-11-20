@@ -50,4 +50,10 @@ const typography = {
   },
 }
 
-export default { breakpoints, colors, typography }
+const spacing = Object.assign('8px', {
+  small: '4px',
+  medium: '16px',
+  large: '24px',
+})
+
+export default { breakpoints, colors, typography, spacing }
