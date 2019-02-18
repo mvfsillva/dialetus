@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@rebass/grid": "^6.0.0-4",
-    "auto-bind": "^1.2.1",
     "axios": "latest",
     "classnames": "^2.2.6",
     "next": "^8.0.1",
