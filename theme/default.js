@@ -1,59 +1,83 @@
-import { darken, lighten } from 'polished'
+const theme = {}
 
-// @media screen and (min-width: 36em) - 576px
-// @media screen and (min-width: 48em) - 768px
-// @media screen and (min-width: 62em) - 992px
-// @media screen and (min-width: 75em) - 1.200px
-const breakpoints = ['36em', '48em', '62em', '75em']
-const black = '#000000'
-const gray = '#7e7e7e'
+theme.radius = Object.assign('3px', {
+  micro: '2px',
+  medium: '4px',
+  large: '6px',
+  xlarge: '8px',
+})
 
-const colors = {
-  white: '#ffffff',
-
-  black: Object.assign(black, {
-    lighter: lighten('0.2', black),
-    light: lighten('0.1', black),
-    dark: darken('0.025', black),
-    darker: darken('0.1', black),
-  }),
-
-  gray: Object.assign(gray, {
-    lighter: lighten('0.2', gray),
-    light: lighten('0.1', gray),
-    dark: darken('0.025', gray),
-    darker: darken('0.1', gray),
-  }),
-
-  shadow: Object.assign('0 2px 6px rgba(0, 0, 0, .16)', {
-    small: '0 1px 1px rgba(0, 0, 0, .16)',
-    medium: '0 8px 10px rgba(0, 0, 0, .16)',
-    large: '0 24px 32px rgba(0, 0, 0, .16)',
-  }),
-}
-
-const typography = {
-  hero: {
-    fontSize: '56px',
-    lineHeight: '60px',
-    fontWeight: '300',
-  },
-  h100: {
-    fontSize: '26px',
-    lineHeight: '32px',
-    fontWeight: '500',
-  },
-  body: {
-    fontSize: '20px',
-    lineHeight: '28px',
-    fontWeight: '300',
-  },
-}
-
-const spacing = Object.assign('8px', {
+theme.spacing = Object.assign('8px', {
   small: '4px',
   medium: '16px',
   large: '24px',
+  xLarge: '32px',
+  xxLarge: '40px',
+  xxxLarge: '48px',
+  huge: '56px',
+  xHuge: '64px',
+  xxHuge: '72px',
+  xxxHuge: '80px'
 })
 
-export default { breakpoints, colors, typography, spacing }
+theme.zindex = {
+  dropdown: 100,
+  sticky: 200,
+  fixed: 300,
+  overlay: 400,
+  modal: 500,
+  popover: 600,
+  tooltip: 700
+}
+
+theme.responsive = {
+  smallPhone: 'screen and (min-width: 320px) and (max-width: 480px)',
+  smallTablet: 'screen and (min-width: 481px) and (max-width: 767px)',
+  smallDesktop: 'screen and (min-width: 1025px) and (max-width: 1280px)',
+  phone: 'screen and (max-width: 580px)',
+  tablet: 'screen and (min-width: 768px) and (max-width: 1024px)',
+  desktop: 'screen and (min-width: 1281px)'
+}
+
+theme.palette = {
+  white: '#ffffff',
+  black: '#000000',
+
+  primary: Object.assign('#6800c3', {
+    fallback: '#a55cff',
+  }),
+
+  gray: Object.assign('#7e7e7e', {
+    light: '#bfbfbf',
+    ultraLight: '#f7f7f7',
+
+    // scale
+    '050': '#fafafa',
+    100: '#f5f5f5',
+    200: '#eeeeee',
+    300: '#e0e0e0',
+    400: '#bdbdbd',
+    500: '#9e9e9e',
+    600: '#757575',
+    700: '#616161',
+    800: '#424242',
+    900: '#212121',
+  }),
+
+  error: Object.assign('#da1616', {
+    dark: '#ac1111',
+    light: '#f8b9b9',
+  }),
+
+  success: Object.assign('#28a354', {
+    dark: '#1e7b3f',
+    light: '#c1f0d2',
+  }),
+
+  warning: Object.assign('#ff9f00', {
+    dark: '#f28100',
+    light: '#db8800',
+  }),
+}
+
+export default theme
