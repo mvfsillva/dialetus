@@ -43,8 +43,8 @@ theme.palette = {
   white: '#ffffff',
   black: '#000000',
 
-  primary: Object.assign('#6800c3', {
-    fallback: '#a55cff',
+  primary: Object.assign('#282035', {
+    fallback: '#5d467e',
   }),
 
   gray: Object.assign('#7e7e7e', {
