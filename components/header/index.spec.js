@@ -14,11 +14,16 @@ describe('[Component: Header]', () => {
 
   it('should verify if the props exists', () => {
     const wrapper = wrap({ headline: 'Dialetus' })
-    expect(wrapper.props().children).toBeTruthy()
+    expect(wrapper.props()).toBeTruthy()
   })
 
-  it('should register called one time change', () => {
+  it('should render headline prop', () => {
     const wrapper = wrap({ headline: 'Dialetus' })
     expect(wrapper.contains('Dialetus')).toBe(true)
+  })
+
+  it('should verify that the props shows the same value passed', () => {
+    const wrapper = wrap({ headline: 'Brazilian Dialects' })
+    expect(wrapper.text()).toEqual('Brazilian Dialects')
   })
 })
