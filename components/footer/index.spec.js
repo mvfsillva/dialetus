@@ -1,9 +1,10 @@
 import React from 'react'
+import { shallowWithTheme,  mountWithTheme } from '../../config/styled-enzyme'
+
 import Footer from '.'
 
-const shallow = global.StyledComponents.shallowWithTheme
-const mount = global.StyledComponents.mountWithTheme
-
+const shallow = shallowWithTheme
+const mount = mountWithTheme
 const wrap = (props = {}) => shallow(<Footer {...props} />)
 
 describe('[Component: Footer]', () => {
