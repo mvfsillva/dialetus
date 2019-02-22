@@ -3,12 +3,10 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { If } from 'react-extras'
 
-import theme from '../../theme/default'
-
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  padding: ${theme.spacing.medium};
+  padding: ${({ theme }) => theme.spacing.medium};
 
 `
 
