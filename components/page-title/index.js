@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   padding: ${({ theme }) => theme.spacing.medium};
-
+  text-transform: capitalize;
 `
 
 const PageTitle = ({ title, description }) => (
