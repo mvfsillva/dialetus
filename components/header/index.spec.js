@@ -1,31 +1,31 @@
 import React from 'react'
-import { shallowWithTheme, mountWithTheme } from 'config/test/enzyme.theme'
-import theme from 'theme'
+import { shallowWithTheme,  mountWithTheme } from '../../config/styled-enzyme'
+
 import Header from '.'
 
-import 'jest-styled-components'
+const shallow = shallowWithTheme
+const mount = mountWithTheme
 
-const shallow = shallowWithTheme(theme)
-const mount = mountWithTheme(theme)
-
-const router = {
-  pathname: '/'
-}
-
-const wrap = (props = {}) => shallow(<Header headline="headline" {...props} />).dive()
+const wrap = (props = {}) => shallow(<Header {...props} />)
 
 describe('[Component: Header]', () => {
-  it('mounts component', () => {
-    mount(<Header headline="headline" router={ router } />)
-    mount(<Header headline="headline" dialect="dialect" router={ router } />)
-  })
-  it('renders headline when passed in', () => {
-    const wrapper = wrap({ headline: 'test', router })
-    expect(wrapper.contains('test')).toBe(true)
-  })
-  it('renders dialect when passed in', () => {
-    const wrapper = wrap({ dialect: 'test', router })
-    expect(wrapper.contains('test')).toBe(true)
+  it('should mount <Header /> component', () => {
+    mount(<Header />)
+    mount(<Header headline="Brazilian Dialects" />)
   })
 
+  it('should verify if the props exists', () => {
+    const wrapper = wrap({ headline: 'Dialetus' })
+    expect(wrapper.props()).toBeTruthy()
+  })
+
+  it('should render headline prop', () => {
+    const wrapper = wrap({ headline: 'Dialetus' })
+    expect(wrapper.contains('Dialetus')).toBe(true)
+  })
+
+  it('should verify that the props shows the same value passed', () => {
+    const wrapper = wrap({ headline: 'Brazilian Dialects' })
+    expect(wrapper.text()).toEqual('Brazilian Dialects')
+  })
 })

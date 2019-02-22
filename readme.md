@@ -14,7 +14,7 @@ The idea came about through the meeting of friends who only knew each other thro
 
 - [Dialetus Service](https://github.com/mvfsillva/dialetus-service)
 - React 16
-- Next 7
+- Next 8
 - Styled Components
 - Server Side Rendering (SSR)
 - Docker

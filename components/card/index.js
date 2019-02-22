@@ -1,62 +1,68 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import classnames from 'classnames'
-import { transitions } from 'polished'
-import { transition } from 'mixins/transition'
 
-const Panel = styled.div`
-  background-color: ${p => p.theme.colors.white};
-  border: 1px solid ${p => p.theme.colors.gray.lighter};
-  box-shadow: ${p => p.theme.colors.shadow.small};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 10px;
-  ${transitions(transition({ property: 'box-shadow', duration: '950ms' }))};
-  cursor: pointer;
-  margin: 20px;
-  text-align: center;
+const Wrapper = styled.div`
+  display: block;
+  background-color: ${({ theme }) => theme.palette.white};
+  box-shadow: ${({ theme }) => theme.shadow.medium};
+  color: ${({ theme }) => theme.palette.black};
+  border-radius: ${({ theme }) => theme.radius};
+  padding: ${({ theme }) => theme.spacing.medium};
+  max-width: 360px;
+  margin: ${({ theme }) => theme.spacing.medium};
 
-  &:hover,
-  &:focus {
-    box-shadow: ${p => p.theme.colors.shadow.medium};
+  h1, h2, h3 {
+    margin-top: ${({ theme }) => theme.spacing.medium};
+    margin-bottom: ${({ theme }) => theme.spacing};
   }
 
-  &.small {
-    width: 300px;
-    height: 300px;
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-top: ${({ theme }) => theme.spacing.large};
+    margin-bottom: ${({ theme }) => theme.spacing};
   }
 
-  &.medium {
-    width: 400px;
-    height: 400px;
-  }
-
-  &.large {
-    width: 500px;
-    height: 500px;
+  .center {
+    text-align: center;
   }
 `
 
-const Card = ({ children, size }) => {
-  const classname = classnames({
-    small: size === 'small',
-    medium: size === 'medium',
-    large: size === 'large',
-  })
+const FlexWrap = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: ${({ theme }) => theme.spacing.large};
+`
 
-  return  (
-    <Panel className={classname} size={size}>{children}</Panel>
-  )
+const Card = ({ data }) => (
+  <FlexWrap>
+    {data.map((data, index) =>
+      <Wrapper key={index}>
+        <hgroup>
+          <h2 className="center">Barril Dobrado</h2>
+          <h3>Descrição:</h3>
+        </hgroup>
+        <p>apenas um exemplo de descrição</p>
+        <div>
+          <h3>Exemplos:</h3>
+          <p>Porra esse pivete é barril dobrado!</p>
+          <p>Aquele dia foi barril dobrado vei!</p>
+        </div>
+      </Wrapper>
+	  )}
+  </FlexWrap>
+)
+
+Card.defaultProps = {
+  data: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 
 Card.propTypes = {
-  size: PropTypes.oneOf(['small', 'medium', 'large'])
-}
-
-Card.defaultProps = {
-  size: 'small'
+  data: PropTypes.array
 }
 
 export default Card
