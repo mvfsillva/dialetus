@@ -30,6 +30,14 @@ theme.zindex = {
   tooltip: 700
 }
 
+theme.shadow = {
+  micro: '0 1px 2px 0 rgba(0, 0, 0, 0.08);',
+  soft: '0 0 16px 0 rgba(0, 0, 0, 0.08);',
+  small: '0 2px 4px 0 rgba(0, 0, 0, 0.15);',
+  medium: '0 4px 10px 0 rgba(0, 0, 0, 0.15);',
+  large: '0 6px 16px 2px rgba(0, 0, 0, 0.08);'
+}
+
 theme.responsive = {
   smallPhone: 'screen and (min-width: 320px) and (max-width: 480px)',
   smallTablet: 'screen and (min-width: 481px) and (max-width: 767px)',
