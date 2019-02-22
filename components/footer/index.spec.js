@@ -22,6 +22,4 @@ describe('[Component: Footer]', () => {
     const wrapper = wrap({ info: 'dialetus' })
     expect(wrapper.text()).toEqual('dialetus')
   })
-
-
 })
