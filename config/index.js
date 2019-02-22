@@ -1,3 +1,3 @@
 module.exports = {
-  api: process.env.API,
+  api: process.env.API_URL,
 }
