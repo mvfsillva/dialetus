@@ -9,7 +9,7 @@ import Main from '../../styles/main'
 
 const Page = ({ children }) => (
   <FullContainer>
-    <Header />
+    <Header headline="Dialetos Brasileiros" />
     <Main>
       {children}
     </Main>
