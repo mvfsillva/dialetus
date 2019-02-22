@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import theme from '../../theme/default'
 import SearchIcon from '../../icons/search'
 
-const Wrapper = styled.form`
+const Wrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
@@ -28,8 +28,8 @@ const Wrapper = styled.form`
   }
 `
 
-const Search = ({ onChange, onSubmit, placeholder }) => (
-  <Wrapper onSubmit={onSubmit}>
+const Search = ({ onChange, placeholder }) => (
+  <Wrapper>
     <input type="text" name="dialect" onChange={onChange} placeholder={placeholder} />
     <SearchIcon />
   </Wrapper>
@@ -37,7 +37,6 @@ const Search = ({ onChange, onSubmit, placeholder }) => (
 
 Search.propTypes = {
   onChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
   placeholder: PropTypes.string
 }
 
