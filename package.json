@@ -1,7 +1,7 @@
 {
   "name": "dialetus",
   "author": "Marcus Silva <mvfsillva@gmail.com>",
-  "version": "0.0.0-canary.1",
+  "version": "0.0.0",
   "scripts": {
     "dev": "node server",
     "build": "next build",
