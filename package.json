@@ -27,7 +27,8 @@
     "react-dom": "^16.5.0",
     "react-extras": "^0.7.1",
     "styled-components": "^4.1.1",
-    "styled-theme": "^0.3.3"
+    "styled-theme": "^0.3.3",
+    "throttle-debounce": "^2.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.3.3",
