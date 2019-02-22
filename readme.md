@@ -3,7 +3,7 @@
 <p align="center">
     <br/>
   <br/>
-  <img src=".github/brazil.png">
+  <img src=".github/dialetus.gif">
   <br/>
   <br/>
 </p>
