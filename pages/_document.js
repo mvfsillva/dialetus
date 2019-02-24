@@ -1,8 +1,6 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
-import GlobalStyle from 'theme/global-style'
-
 class MyDocument extends Document {
   static async getInitialProps (ctx) {
     const sheet = new ServerStyleSheet()
@@ -26,7 +24,6 @@ class MyDocument extends Document {
           <link rel="icon" href="/static/icon.png" type="image/png" />
         </Head>
         <body>
-          <GlobalStyle />
           <Main />
           <NextScript />
         </body>
