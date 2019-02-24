@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
 import { debounce } from 'throttle-debounce'
+import PropTypes from 'prop-types'
 
-import Page from '../layouts/default'
 import Card from 'components/card'
 import PageTitle from 'components/page-title'
 import Navigation from 'components/navigation'
 import Search from 'components/search'
+import Page from '../layouts/default'
 
 import api from '../services'
 
 class Home extends Component {
-  static async getInitialProps (ctx) {
+  static async getInitialProps() {
     try {
       const data = await api('/regions')
       return { region: data }
@@ -70,6 +71,14 @@ class Home extends Component {
       </Page>
     )
   }
+}
+
+Home.defaultProps = {
+  region: []
+}
+
+Home.propTypes = {
+  region: PropTypes.array
 }
 
 export default Home
