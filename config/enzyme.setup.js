@@ -4,5 +4,4 @@ import * as StyledComponents from './enzyme.theme'
 
 configure({ adapter: new Adapter() })
 
-// allow any test to easily use the StyledComponents helpers
 global.StyledComponents = StyledComponents
