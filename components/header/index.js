@@ -13,6 +13,12 @@ const Wrapper = styled.header`
   h1 {
     padding: ${({ theme }) => theme.spacing};
   }
+
+  @media ${({ theme }) => theme.responsive.smallphone} {
+    h1 {
+      text-align: center;
+    }
+  }
 `
 
 const Header = ({ headline }) => (
