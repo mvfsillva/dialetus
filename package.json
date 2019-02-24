@@ -8,7 +8,8 @@
     "clean": "rimraf build",
     "coveralls": "yarn test:coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf coverage",
     "start": "next start",
-    "lint": "xo --quiet && stylelint '**/*.js'",
+    "lint": "xo --quiet",
+    "lint:css": "stylelint './components/**/*.js' './styles/**/*.js' './pages/**/*.js' './layouts/**/*.js'",
     "lint:fix": "xo --quiet --write '**/*.js'",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -35,7 +36,7 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-cli": "^6.26.0",
-    "babel-eslint": "^9.0.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.2",
     "babel-plugin-inline-dotenv": "^1.2.1",
@@ -68,6 +69,7 @@
     "xo": "^0.22.0"
   },
   "xo": {
+    "parser": "babel-eslint",
     "extends": [
       "prettier",
       "prettier/react",
@@ -76,6 +78,11 @@
     "plugins": [
       "jsx-a11y"
     ],
+    "rules": {
+      "react/react-in-jsx-scope": 0,
+      "import/no-unassigned-import": 0,
+      "import/no-unresolved": 0
+    },
     "globals": [
       "expect",
       "it",
