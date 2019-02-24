@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { debounce } from 'throttle-debounce'
 import PropTypes from 'prop-types'
+import { If } from 'react-extras'
 
 import Card from 'components/card'
 import PageTitle from 'components/page-title'
 import Navigation from 'components/navigation'
 import Search from 'components/search'
+import Loading from 'components/loading'
 import Page from '../layouts/default'
 
 import api from '../services'
@@ -24,7 +26,8 @@ class Home extends Component {
     super(props)
     this.state = {
       regionName: 'baianes',
-      dialects: []
+      dialects: [],
+      loading: false
     }
   }
 
@@ -35,12 +38,14 @@ class Home extends Component {
   handleRegionClick = name => this.getDialect(name)
 
   getDialect = async region => {
+    this.setState({ loading: true })
     const data = await api(`/regions/${region}/dialects`)
-    this.setState({ dialects: data, regionName: region })
+    this.setState({ dialects: data, regionName: region, loading: false })
   }
 
   handleChange = e => {
     const query = e.target.value
+    this.setState({ loading: true })
 
     if (query.length >= 3)
       return debounce(1000, () => this.filterDialect(query))()
@@ -50,16 +55,18 @@ class Home extends Component {
 
   filterDialect = query => {
     const { dialects } = this.state
+    this.setState({ loading: true })
+
     const filtered = dialects.filter(({ dialect }) => {
       const str = dialect.toLowerCase()
       return str.includes(query.toLowerCase())
     })
 
-    this.setState({ dialects: filtered })
+    this.setState({ dialects: filtered, loading: false })
   }
 
   render () {
-    const { dialects, regionName } = this.state
+    const { dialects, regionName, loading } = this.state
     const { region } =  this.props
 
     return (
@@ -67,6 +74,7 @@ class Home extends Component {
         <Navigation regions={region} onClick={this.handleRegionClick} />
         <PageTitle title={regionName} />
         <Search onChange={this.handleChange} />
+        <If condition={loading} render={() => <Loading />} />
         <Card data={dialects} />
       </Page>
     )

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { For, Choose } from 'react-extras'
 
+import FlexWrap from '../../styles/flex-wrap'
+
 const Wrapper = styled.div`
   display: block;
   background-color: ${({ theme }) => theme.palette.white};
@@ -30,16 +32,9 @@ const Wrapper = styled.div`
   }
 `
 
-const FlexWrap = styled.div`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: ${({ theme }) => theme.spacing.large};
-`
-
 const Card = ({ data }) => {
+  const dialetusService = 'https://github.com/mvfsillva/dialetus-service'
+
   return (
     <FlexWrap>
       <For of={data} render={item =>
@@ -55,20 +50,12 @@ const Card = ({ data }) => {
               <h3>Exemplos:</h3>
               <Choose>
                 <Choose.When condition={item.examples === undefined}>
-                  Nos ajude adicionando exemplos no{' '}
-                  <a
-                    href="https://github.com/mvfsillva/dialetus-service"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                  >
+                  Nos ajude adicionando exemplos no <a href={dialetusService} rel="noopener noreferrer" target="_blank">
                     Dialetus Service
                   </a>
                 </Choose.When>
                 <Choose.When condition={Array.isArray(item.examples)}>
-                  <For
-                    of={item.examples}
-                    render={example => <p key={example}>{example}</p>}
-                  />
+                  <For of={item.examples} render={example => <p key={example}>{example}</p>} />
                 </Choose.When>
               </Choose>
             </div>
