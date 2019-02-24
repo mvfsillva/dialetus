@@ -18,9 +18,7 @@ const Wrapper = styled.div`
     font-size: 16px;
     margin: ${({ theme }) => theme.spacing};
     text-transform: capitalize;
-
     color: ${({ theme }) => theme.palette.primary};
-    background-color: transparent;
     border: none;
     &:hover {
       color: ${({ theme }) => theme.palette.primary.fallback};
@@ -41,7 +39,7 @@ const Navigation = ({ regions, onClick }) => {
 }
 
 Navigation.defaultProps = {
-  regions: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  regions: []
 }
 
 Navigation.propTypes = {
