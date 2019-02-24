@@ -59,7 +59,7 @@ theme.palette = {
     light: '#bfbfbf',
     ultraLight: '#f7f7f7',
 
-    // scale
+    // Scale
     '050': '#fafafa',
     100: '#f5f5f5',
     200: '#eeeeee',
