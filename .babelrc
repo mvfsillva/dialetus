@@ -2,11 +2,11 @@
   "env": {
     "development": {
       "presets": ["next/babel"],
-      "plugins": ["inline-dotenv"]
+      "plugins": ["inline-dotenv", ["styled-components", { "ssr": true }]]
     },
     "production": {
       "presets": ["next/babel"],
-      "plugins": ["transform-inline-environment-variables"]
+      "plugins": ["transform-inline-environment-variables", ["styled-components", { "ssr": true }]]
     },
     "test": {
       "presets": [
