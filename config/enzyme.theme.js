@@ -1,9 +1,8 @@
 import React from 'react'
+import 'jest-styled-components'
 import { mount, shallow } from 'enzyme'
 import { ThemeProvider } from 'styled-components'
-import 'jest-styled-components'
 
-// every test uses the base theme, if no custom theme is provided
 import defaulTheme from '../theme/default'
 
 export const shallowWithTheme = (children, customTheme) => {
