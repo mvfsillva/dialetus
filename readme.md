@@ -1,6 +1,12 @@
 # Dialetus
 
 <p align="center">
+    <img width="400" height="auto" src="logo.svg"/>
+</p>
+
+---
+
+<p align="center">
     <br/>
   <br/>
   <img src=".github/dialetus.gif">
