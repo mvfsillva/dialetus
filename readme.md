@@ -1,5 +1,3 @@
-# Dialetus
-
 <p align="center">
     <img width="400" height="auto" src="logo.svg"/>
 </p>
