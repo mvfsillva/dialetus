@@ -8,28 +8,31 @@ const Wrapper = styled.footer`
   text-align: center;
   width: 100%;
 
-  p {
+  a {
     display: inline-block;
     padding: ${({theme}) => theme.spacing};
     font-weight: 300;
     font-style: normal;
     color: ${({theme}) => theme.palette.primary.fallback};
     margin: 0;
+    text-decoration: none;
   }
 `
 
-const Footer = ({ info }) => (
+const Footer = ({ info, href }) => (
   <Wrapper>
-    <p>{info}</p>
+    <a href={href} rel="noopener noreferrer">{info}</a>
   </Wrapper>
 )
 
 Footer.defaultProps = {
-  info: `@mvfsillva © ${new Date().getUTCFullYear()}`
+  info: `@mvfsillva © ${new Date().getUTCFullYear()}`,
+  href: 'https://github.com/mvfsillva'
 }
 
 Footer.propTypes = {
-  info: PropTypes.string
+  info: PropTypes.string,
+  href: PropTypes.string
 }
 
 export default Footer
