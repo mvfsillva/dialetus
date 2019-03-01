@@ -1,5 +1,5 @@
 {
-	"alias": "dialetus",
+	"alias": "dialetus.com",
 	"env": {
 		"API_URL": "https://dialetus-service.now.sh"
 	}
