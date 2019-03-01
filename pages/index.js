@@ -22,8 +22,8 @@ class Home extends Component {
     }
   }
 
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
       regionName: 'baianes',
       dialects: [],
@@ -33,6 +33,15 @@ class Home extends Component {
 
   componentDidMount() {
     this.getDialect(this.state.regionName)
+    this.serviceWorker()
+  }
+
+  serviceWorker = async () => {
+    if ('serviceWorker' in navigator) {
+      await navigator.serviceWorker.register('/service-worker.js')
+        .then(() => console.info('service worker registration successful'))
+        .catch(err => console.error('service worker registration failed', err.message))
+    }
   }
 
   handleRegionClick = name => this.getDialect(name)
