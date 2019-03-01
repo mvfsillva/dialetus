@@ -1,3 +1,4 @@
+import React from 'react'
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 
@@ -14,16 +15,6 @@ class MyDocument extends Document {
 
     const initialProps = await Document.getInitialProps(ctx)
     return { ...initialProps, styles: [...initialProps.styles, ...sheet.getStyleElement()] }
-  }
-
-  async componentDidMount() {
-    if ('serviceWorker' in navigator) {
-      try {
-        await navigator.serviceWorker.register('/service-worker.js')
-      } catch (error) {
-        console.warn('service worker registration failed', error.message)
-      }
-    }
   }
 
   render () {
@@ -43,6 +34,7 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="static/favicon.ico" type="image/x-icon" />
           <link rel="manifest" href="static/manifest.json" />
+          <title>Dialetus</title>
         </Head>
         <body>
           <Main />
