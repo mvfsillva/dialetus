@@ -1,5 +1,13 @@
 {
-	"alias": "dialetus.com",
+  "version": 2,
+  "alias": [
+    "dialetus.com",
+    "www.dialetus.com"
+  ],
+  "builds": [
+    { "src": "next.config.js", "use": "@now/next" },
+    { "src": "server.js", "use": "@now/node" }
+  ],
 	"env": {
 		"API_URL": "https://dialetus-service.now.sh"
 	}
