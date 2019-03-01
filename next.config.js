@@ -1,14 +1,11 @@
 const SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin')
 const withOffline = require('next-offline')
 
-const pkg = require('./package')
 require('dotenv').config()
 
 module.exports = withOffline({
-  poweredByHeader: false,
-  generateBuildId: async () => pkg.version,
   publicRuntimeConfig: {
-    API_URL: process.env.API_URL,
+    API_URL: process.env.API_URL
   },
   webpack: config => {
     config.plugins.push(
