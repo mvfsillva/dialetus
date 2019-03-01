@@ -2,6 +2,16 @@
   "name": "dialetus",
   "author": "Marcus Silva <mvfsillva@gmail.com>",
   "version": "0.1.0",
+  "description": "Dicionario informal com dialetos de cada regiao brasileira.",
+  "keywords": [
+    "culture",
+    "dictionary",
+    "Brazilian dialects",
+    "dialetos brasileiros",
+    "cultura brasileira",
+    "dicionario informal",
+    "riqueza linguistica"
+  ],
   "scripts": {
     "dev": "node server",
     "build": "next build",
