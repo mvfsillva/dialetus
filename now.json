@@ -1,4 +1,5 @@
 {
+  "name": "Dialetus",
   "version": 2,
   "alias": ["dialetus.com", "www.dialetus.com", "dialetus.now.sh", "www.dialetus.now.sh"],
   "builds": [
