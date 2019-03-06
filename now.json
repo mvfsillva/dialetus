@@ -1,16 +1,12 @@
 {
   "version": 2,
-  "alias": [
-    "dialetus.com",
-    "www.dialetus.com",
-    "dialetus.now.sh",
-    "www.dialetus.now.sh"
-  ],
+  "alias": ["dialetus.com", "www.dialetus.com", "dialetus.now.sh", "www.dialetus.now.sh"],
   "builds": [
     { "src": "next.config.js", "use": "@now/next" },
-    { "src": "server.js", "use": "@now/node" }
+    { "src": "server.js", "use": "@now/node" },
+    { "src": "static/**", "use": "@now/static" }
   ],
-	"env": {
-		"API_URL": "https://dialetus-service.now.sh"
-	}
+  "env": {
+    "API_URL": "https://dialetus-service.now.sh"
+  }
 }
