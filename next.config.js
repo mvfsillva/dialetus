@@ -5,7 +5,7 @@ const pkg = require('./package')
 require('dotenv').config()
 
 module.exports = withOffline({
-  target: 'serveless',
+  target: 'serverless',
   poweredByHeader: false,
   generateBuildId: async () => pkg.version,
   workboxOpts: {
