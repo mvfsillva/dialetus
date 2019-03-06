@@ -6,7 +6,7 @@ module.exports = {
   target: 'serveless',
   poweredByHeader: false,
   generateBuildId: async () => pkg.version,
-  publicRuntimeConfig: {
-    API_URL: process.env.API_URL
+  env: {
+    apiUrl: process.env.API_URL
   }
 }
