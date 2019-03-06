@@ -15,6 +15,7 @@
   "scripts": {
     "dev": "node server",
     "build": "next build",
+    "now-build": "next build",
     "clean": "rimraf build",
     "coveralls": "yarn test:coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls && rm -rf coverage",
     "start": "next start",
