@@ -1,8 +1,10 @@
+const withOffline = require('next-offline')
+
 const pkg = require('./package')
 
 require('dotenv').config()
 
-module.exports = {
+module.exports = withOffline({
   target: 'serveless',
   poweredByHeader: false,
   generateBuildId: async () => pkg.version,
@@ -29,4 +31,4 @@ module.exports = {
   env: {
     apiUrl: process.env.API_URL
   }
-}
+})
