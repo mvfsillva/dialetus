@@ -2,7 +2,7 @@
   "name": "Dialetus",
   "scope": "/",
   "display": "fullscreen",
-  "start_url": "https://dialetus.now.sh/",
+  "start_url": "https://dialetus.com/",
   "short_name": "Dialetus",
   "description": "Um dicionário informal para as expressões idiomáticas de cada região brasil.",
   "orientation": "portrait",
