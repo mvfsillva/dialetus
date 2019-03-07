@@ -1,5 +1,4 @@
 import axios from 'axios'
-import getConfig from 'next/config'
 
 const API_URL = process.env.API_URL
 
