@@ -1,11 +1,34 @@
+const withOffline = require('next-offline')
+
 const pkg = require('./package')
 
 require('dotenv').config()
 
-module.exports = {
+module.exports = withOffline({
+  target: 'serverless',
   poweredByHeader: false,
   generateBuildId: async () => pkg.version,
-  publicRuntimeConfig: {
-    API_URL: process.env.API_URL,
+  workboxOpts: {
+    swDest: 'static/service-worker.js',
+    runtimeCaching: [
+      {
+        urlPattern: /^https?.*/,
+        handler: 'networkFirst',
+        options: {
+          cacheName: 'https-calls',
+          networkTimeoutSeconds: 15,
+          expiration: {
+            maxEntries: 150,
+            maxAgeSeconds: 30 * 24 * 60 * 60
+          },
+          cacheableResponse: {
+            statuses: [0, 200]
+          }
+        }
+      }
+    ]
+  },
+  env: {
+    apiUrl: process.env.API_URL
   }
-}
+})
