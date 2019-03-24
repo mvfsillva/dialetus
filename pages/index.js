@@ -3,11 +3,7 @@ import { debounce } from 'throttle-debounce'
 import PropTypes from 'prop-types'
 import { If } from 'react-extras'
 
-import Card from 'components/card'
-import PageTitle from 'components/page-title'
-import Navigation from 'components/navigation'
-import Search from 'components/search'
-import Loading from 'components/loading'
+import { Card, PageTitle, Navigation, Search, Loading } from '../components'
 import Page from '../layouts/default'
 
 import api from '../services'
