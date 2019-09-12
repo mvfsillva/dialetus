@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = process.env.API_URL
+const API_URL = 'https://dialetus-service.herokuapp.com'
 
 const api = axios.create({
   baseURL: API_URL,
