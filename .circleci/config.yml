@@ -1,7 +1,7 @@
 defaults: &defaults
   working_directory: ~/workspace/repo
   docker:
-    - image: circleci/node:8.11.4-browsers
+    - image: circleci/node:8.16.1-browsers
 
 to_persist: &to_persist
   root: ~/workspace
