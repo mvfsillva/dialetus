@@ -76,7 +76,7 @@
     "prettier": "1.16.4",
     "rimraf": "2.6.3",
     "stylelint": "9.10.1",
-    "stylelint-config-prettier": "4.0.0",
+    "stylelint-config-prettier": "6.0.0",
     "stylelint-config-standard": "18.3.0",
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-processor-styled-components": "1.5.2",
