@@ -29,7 +29,7 @@
     "deploy": "npm run build && npm run export"
   },
   "dependencies": {
-    "@rebass/grid": "6.0.0-7",
+    "@rebass/grid": "6.1.0",
     "axios": "latest",
     "babel-preset-react": "6.24.1",
     "classnames": "2.2.6",
