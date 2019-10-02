@@ -9667,10 +9667,10 @@ react-error-overlay@5.1.4:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-5.1.4.tgz#88dfb88857c18ceb3b9f95076f850d7121776991"
   integrity sha512-fp+U98OMZcnduQ+NSEiQa4s/XMsbp+5KlydmkbESOw4P69iWZ68ZMFM5a2BuE0FgqPBKApJyRuYHR95jM8lAmg==
 
-react-extras@0.9.0:
-  version "0.9.0"
-  resolved "https://registry.yarnpkg.com/react-extras/-/react-extras-0.9.0.tgz#2f8199c05504ff7d5fa8e19cba62029eba554a28"
-  integrity sha512-Vpv4Oo5k2nW6qLfTB3ITVgWEx4lWN66tk64kdnLFppL78yYTP5yAnYw1FEdjC5aFXtv2XVoXxJh6H6PW7pczqQ==
+react-extras@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-extras/-/react-extras-1.0.0.tgz#e47eb295d67f2e62f3f0f72c1c865e95191cf623"
+  integrity sha512-C2M2sPSQsOwiQbWSyK3kulJEaa4RgvQ028fA0+yJeakPZw2XqdMZVT0xWdVbdeSxKTxqZqwqIkYXXL9wpsqZJA==
   dependencies:
     prop-types "^15.6.2"
 
