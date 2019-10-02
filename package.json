@@ -72,7 +72,7 @@
     "husky": "0.14.3",
     "jest": "24.9.0",
     "jest-styled-components": "6.3.3",
-    "lint-staged": "7.3.0",
+    "lint-staged": "9.4.1",
     "prettier": "1.18.2",
     "rimraf": "3.0.0",
     "stylelint": "11.0.0",
