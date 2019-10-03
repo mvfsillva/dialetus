@@ -40,7 +40,7 @@
     "prop-types": "15.7.2",
     "react": "16.10.1",
     "react-dom": "16.10.1",
-    "react-extras": "1.0.0",
+    "react-extras": "1.0.1",
     "styled-components": "4.4.0",
     "styled-theme": "0.3.3",
     "throttle-debounce": "2.1.0"
