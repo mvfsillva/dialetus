@@ -58,6 +58,17 @@ const Card = ({ data }) => {
                   <For of={item.examples} render={example => <p key={example}>{example}</p>} />
                 </Choose.When>
               </Choose>
+              <h3>Sinônimos:</h3>
+              <Choose>
+                <Choose.When condition={item.synonyms == undefined}>
+                  Nos ajude adicionando sinônimos no <a href={dialetusService} rel="noopener noreferrer" target="_blank">
+                    Dialetus Service
+                  </a>
+                </Choose.When>
+                <Choose.When condition={Array.isArray(item.synonyms)}>
+                  <For of={item.synonyms} render={synonym => <p key={synonym}>{synonym}</p>} />
+                </Choose.When>
+              </Choose>
             </div>
           </Wrapper>
         }
