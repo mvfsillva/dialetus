@@ -75,7 +75,7 @@ class Home extends Component {
         <Page>
           <Navigation regions={region} onClick={this.handleRegionClick} />
           <PageTitle title={regionName} />
-          <Search onChange={this.handleChange} />
+          <Search onChange={this.handleChange} placeholder="Digite um dialeto" />
           <If condition={loading} render={() => <Loading />} />
           <Card data={dialects} />
         </Page>
