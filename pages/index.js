@@ -70,7 +70,7 @@ class Home extends Component {
     return (
       <>
         <Head>
-          <title> Dialetus - {regionNameCap} </title>
+          <title> Dialetos Brasileiros - {regionNameCap} </title>
         </Head>
         <Page>
           <Navigation regions={region} onClick={this.handleRegionClick} />

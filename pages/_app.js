@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import App, { Container } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 
@@ -20,6 +21,9 @@ class MyApp extends App {
     const { Component, pageProps } = this.props
     return (
       <Container>
+        <Head>
+          <title> Dialetos Brasileiros </title>
+        </Head>
         <GlobalStyle />
         <ThemeProvider theme={theme}>
           <Component {...pageProps} />
