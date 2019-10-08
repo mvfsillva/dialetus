@@ -43,6 +43,7 @@ class MyDocument extends Document {
           <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
           <link rel="icon" href="static/favicon.ico" type="image/x-icon" />
           <link rel="manifest" href="static/manifest.json" />
+          <title> Dialetus </title>
         </Head>
         <body>
           <Main />

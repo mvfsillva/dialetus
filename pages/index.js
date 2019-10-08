@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { debounce } from 'throttle-debounce'
 import PropTypes from 'prop-types'
 import { If } from 'react-extras'
+import Head from 'next/head'
 
 import { Card, PageTitle, Navigation, Search, Loading } from '../components'
 import Page from '../layouts/default'
@@ -64,15 +65,21 @@ class Home extends Component {
   render () {
     const { dialects, regionName, loading } = this.state
     const { region } =  this.props
+    const regionNameCap = regionName[0].toUpperCase() + regionName.slice(1)
 
     return (
-      <Page>
-        <Navigation regions={region} onClick={this.handleRegionClick} />
-        <PageTitle title={regionName} />
-        <Search onChange={this.handleChange} />
-        <If condition={loading} render={() => <Loading />} />
-        <Card data={dialects} />
-      </Page>
+      <>
+        <Head>
+          <title> Dialetus - {regionNameCap} </title>
+        </Head>
+        <Page>
+          <Navigation regions={region} onClick={this.handleRegionClick} />
+          <PageTitle title={regionName} />
+          <Search onChange={this.handleChange} />
+          <If condition={loading} render={() => <Loading />} />
+          <Card data={dialects} />
+        </Page>
+      </>
     )
   }
 }
