@@ -30,7 +30,8 @@ const Wrapper = styled.div`
 
 const Search = ({ onChange, placeholder }) => (
   <Wrapper>
-    <input type="text" name="dialect" onChange={onChange} placeholder={placeholder} autoComplete="off" />
+    <label className="sr-only" htmlFor="search"> {placeholder} </label>
+    <input type="text" name="dialect" onChange={onChange} placeholder={placeholder} autoComplete="off" id="search" />
     <SearchIcon />
   </Wrapper>
 )
