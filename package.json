@@ -41,7 +41,7 @@
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-extras": "1.0.1",
-    "styled-components": "4.4.0",
+    "styled-components": "4.4.1",
     "styled-theme": "0.3.3",
     "throttle-debounce": "2.1.0"
   },
