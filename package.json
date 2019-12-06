@@ -46,8 +46,8 @@
     "throttle-debounce": "2.1.0"
   },
   "devDependencies": {
-    "@babel/core": "7.7.4",
-    "@babel/preset-env": "7.7.4",
+    "@babel/core": "7.7.5",
+    "@babel/preset-env": "7.7.5",
     "@babel/preset-react": "7.7.4",
     "babel-cli": "6.26.0",
     "babel-eslint": "10.0.3",
