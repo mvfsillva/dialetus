@@ -11507,10 +11507,10 @@ pnp-webpack-plugin@1.5.0:
   dependencies:
     ts-pnp "^1.1.2"
 
-polished@3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/polished/-/polished-3.5.0.tgz#bffb0db79025c61d1f735f9bb77a379f5fc46345"
-  integrity sha512-TujkqjczBuuG8ObaNeq+zCCu46tTdaWxqtMxCGTxsV5NYTr9pL08H1P0jgy1V4PXLWm2UlIj+icSEwAZv7I8TA==
+polished@3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/polished/-/polished-3.5.1.tgz#657b6faf4c2308f3e0b1951196803a5e5d67b122"
+  integrity sha512-GVbvskpBiDV5TknurGL6OyFfLHsCknxbU8w5iMppT8rW0tLEoQHrIRfrPNPqGXNj3HGhkjRvhmg59Fy7HSnCAw==
   dependencies:
     "@babel/runtime" "^7.8.7"
 
