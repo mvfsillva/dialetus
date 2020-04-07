@@ -2487,6 +2487,11 @@
   dependencies:
     any-observable "^0.3.0"
 
+"@sindresorhus/class-names@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@sindresorhus/class-names/-/class-names-1.1.0.tgz#0169df27fcd7cdc0cf565cbd4ee9f30095fa4a0d"
+  integrity sha512-08ZNyv6o1ynBFg+JuMOxGikXiF6TU9Y7xr3Nzb6r6e/D5OAOU+W+BS+BV2AQqpXOqFLYrGLow2Mc2PlRc4bNoQ==
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
@@ -3391,6 +3396,11 @@ atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
+
+auto-bind@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/auto-bind/-/auto-bind-4.0.0.tgz#e3589fc6c2da8f7ca43ba9f84fa52a744fc997fb"
+  integrity sha512-Hdw8qdNiqdJ8LqT0iK0sVzkFbzg6fhnQqqfWhBDxcHZvU75+B+ayzTy8x+k5Ix0Y92XOhOUlx74ps+bA6BeYMQ==
 
 autoprefixer@^9.7.1:
   version "9.7.1"
@@ -11330,11 +11340,13 @@ react-dom@16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
-react-extras@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/react-extras/-/react-extras-1.0.1.tgz#d9690dab83361d7132df4da572d1d801c628362f"
-  integrity sha512-j7dKvWwrYjLLAjqXkFLk1BOjcGKOox9TFUqzU5VtiL4LTtUyCpbBNnglEY2uoh8JyqrMnVZcDp3JpRWTDQURog==
+react-extras@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/react-extras/-/react-extras-2.0.0.tgz#81789c850909124e25f383849baf3384e3e53de1"
+  integrity sha512-nHBDWTBFxNCanVpqY9goM/HsjQQN3puqRcAPto+yo4+RT3wiU2Nx2yhIlu+WAXVW0hrmK/ZaYHStPLLS+QGgNA==
   dependencies:
+    "@sindresorhus/class-names" "^1.1.0"
+    auto-bind "^4.0.0"
     prop-types "^15.6.2"
 
 react-is@16.8.6:
