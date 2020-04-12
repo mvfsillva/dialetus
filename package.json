@@ -81,7 +81,7 @@
     "stylelint-config-styled-components": "0.1.1",
     "stylelint-processor-styled-components": "1.10.0",
     "sw-precache-webpack-plugin": "0.11.5",
-    "xo": "0.29.0"
+    "xo": "0.29.1"
   },
   "xo": {
     "parser": "babel-eslint",
