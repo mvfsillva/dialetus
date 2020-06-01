@@ -3,5 +3,5 @@ module.exports = {
   displayName: 'client',
   testEnvironment: 'jest-environment-jsdom',
   setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect', './test/setup-tests.js', 'jest-canvas-mock'],
-  snapshotSerializers: ['jest-styled-components']
+  snapshotSerializers: ['jest-styled-components'],
 }

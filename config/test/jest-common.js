@@ -5,7 +5,7 @@ module.exports = {
   moduleNameMapper: {
     '\\.module\\.css$': 'identity-obj-proxy',
     '\\.css$': require.resolve('./style-mock.js'),
-    '^~/(.*)$': '<rootDir>/src/$1'
+    '^~/(.*)$': '<rootDir>/src/$1',
   },
-  watchPlugins: ['jest-watch-select-projects']
+  watchPlugins: ['jest-watch-select-projects'],
 }

@@ -17,8 +17,9 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
+    "lint:fix": "xo --quiet --write \"**/*.+(js|ts|tsx)\"",
     "lint": "xo",
-    "lint:css": "stylelint \"**/*.+(js|ts|tsx)\"",
+    "lint:format": "prettier --write '**/*.{js,jsx,ts, tsx}'",
     "test": "jest",
     "validate": "yarn lint && yarn lint:css && yarn test"
   },
@@ -58,6 +59,7 @@
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "@types/styled-components": "^5.1.0",
+    "eslint-plugin-react": "^7.20.0",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "jest-styled-components": "^7.0.2",
