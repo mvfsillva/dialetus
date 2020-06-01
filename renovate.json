@@ -1,8 +1,5 @@
 {
-  "extends": ["config:base", "docker:disable"],
+  "extends": ["config:base"],
   "automerge": true,
-  "major": {
-    "automerge": false
-  },
   "assignees": ["mvfsillva"]
 }

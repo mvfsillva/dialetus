@@ -1,28 +1,14 @@
-<p align="center">
-    <img width="400" height="auto" src="logo.svg"/>
-</p>
-
----
-
-<p align="center">
-    <br/>
-  <br/>
-  <img src=".github/dialetus.gif">
-  <br/>
-  <br/>
-</p>
-
 ## About
 
 The idea came about through the meeting of friends who only knew each other through the internet, each one with its linguistic-cultural traits, we thought of creating an informal dictionary for the idiomatic expressions that each Brazilian region possessed, so the project was totally collaborative, bringing cultural diversity from each one of us, being able, to deepen in the our Brazilian's daily culture.
 
 - [Dialetus Service](https://github.com/mvfsillva/dialetus-service)
-- React 16
-- Next 8
-- Styled Components
+- React
+- Typescript
+- Testing library
+- Next 9.x.x
+- Styled Components 5.x.x
 - Server Side Rendering (SSR)
-- Docker
-- Zeit/now
 
 ## Contributing
 
@@ -58,4 +44,4 @@ Please respect our [Code of Conduct](.github/code-of-conduct.md), in short:
 
 ## License
 
-[MIT](license) © 2019 Marcus Silva
+[MIT](license) © Marcus Silva

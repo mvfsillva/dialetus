@@ -1,33 +1,4 @@
 {
-  "env": {
-    "development": {
-      "presets": ["next/babel"],
-      "plugins": ["inline-dotenv", ["styled-components", { "ssr": true }]]
-    },
-    "production": {
-      "presets": ["next/babel"],
-      "plugins": ["transform-inline-environment-variables", ["styled-components", { "ssr": true }]]
-    },
-    "test": {
-      "presets": [
-        "@babel/preset-env",
-        "@babel/preset-react"
-      ]
-    }
-  },
-  "plugins": [
-    [ "module-resolver",  {
-      "alias": {
-        "components": "./components",
-        "config": "./config",
-        "containers": "./containers",
-        "mixins": "./mixins",
-        "pages": "./pages",
-        "services": "./services",
-        "theme": "./theme",
-        "utils": "./utils",
-        "layouts": "./layouts"
-      }
-    }]
-  ]
+  "presets": ["next/babel"],
+  "plugins": [["styled-components", { "ssr": true }]]
 }
