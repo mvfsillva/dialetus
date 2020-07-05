@@ -1,8 +1,8 @@
 {
   "name": "dialetus",
   "author": "Marcus Silva <mvfsillva@gmail.com>",
-  "version": "1.0.0",
-  "description": "Dicionario informal com dialetos de cada regiao brasileira.",
+  "version": "2.0.0",
+  "description": "Dicionário informal sobre os dialetos das regiões brasileiras.",
   "keywords": [
     "culture",
     "dictionary",
@@ -17,23 +17,15 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "lint:fix": "xo --quiet --write \"**/*.+(js|ts|tsx)\"",
-    "lint": "xo",
-    "lint:format": "prettier --write '**/*.{js,jsx,ts, tsx}'",
+    "lint": "eslint --max-warnings=0",
+    "lint:css": "stylelint '**/*.+(js|ts|tsx)'",
     "test": "jest",
-    "validate": "yarn lint && yarn lint:css && yarn test"
-  },
-  "xo": {
-    "extends": [
-      "prettier",
-      "prettier/react",
-      "plugin:react/recommended"
-    ]
+    "lint:validate": "yarn lint --fix && yarn lint:css --fix"
   },
   "lint-staged": {
     "**/*.+(js|ts|tsx)": [
-      "prettier --semi false --single-quote --write",
-      "yarn validate",
+      "yarn lint:validate",
+      "yarn test --findRelatedTests --bail",
       "git add"
     ]
   },
@@ -43,38 +35,40 @@
     }
   },
   "dependencies": {
-    "dotenv": "8.2.0",
-    "next": "9.4.4",
+    "next": "^9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "styled-components": "5.1.1",
     "swr": "^0.2.2"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "5.8.0",
-    "@testing-library/react": "10.0.4",
-    "@testing-library/react-hooks": "3.2.1",
-    "@types/jest": "^25.2.3",
-    "@types/node": "^14.0.6",
-    "@types/react": "^16.9.35",
-    "@types/react-dom": "^16.9.8",
+    "@babel/core": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@testing-library/jest-dom": "^5.11.0",
+    "@testing-library/react": "^10.4.4",
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.14",
+    "@types/react": "^16.9.41",
     "@types/styled-components": "^5.1.0",
-    "eslint-plugin-react": "^7.20.0",
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "@typescript-eslint/parser": "^3.5.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.5",
     "husky": "^4.2.5",
-    "jest": "^26.0.1",
+    "jest": "^26.1.0",
     "jest-styled-components": "^7.0.2",
-    "jsdom": "16.2.2",
-    "lint-staged": "^10.2.7",
+    "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
-    "stylelint": "^13.5.0",
-    "stylelint-config-prettier": "^8.0.1",
+    "stylelint": "^13.6.1",
+    "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
-    "ts-jest": "^26.1.0",
-    "ts-loader": "^7.0.5",
-    "tsconfig-paths-webpack-plugin": "3.2.0",
-    "typescript": "^3.9.3",
-    "xo": "^0.30.0"
+    "typescript": "^3.9.6"
   }
 }
