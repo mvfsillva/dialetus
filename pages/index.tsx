@@ -1,3 +1,3 @@
-const Home = () => <h1>TS</h1>
-
-export default Home
+export default function Home() {
+  return <h1>New Dialetus</h1>
+}
