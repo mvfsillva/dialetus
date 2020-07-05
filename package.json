@@ -20,7 +20,7 @@
     "lint": "eslint --max-warnings=0",
     "lint:css": "stylelint '**/*.+(js|ts|tsx)'",
     "test": "jest",
-    "lint:validate": "yarn lint --fix && yarn lint:css --fix"
+    "lint:validate": "yarn lint --fix && yarn lint:css"
   },
   "lint-staged": {
     "**/*.+(js|ts|tsx)": [
