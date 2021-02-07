@@ -3,18 +3,18 @@ import media from 'styled-media-query'
 
 export const Wrapper = styled.header`
   ${({ theme }) => css`
-    text-align: center;
-    box-sizing: border-box;
-    box-shadow: ${theme.shadow.small};
-    padding: ${theme.spaces.small};
     display: flex;
-    align-item: center;
-    justify-content: space-between;
+    text-align: center;
+    padding: ${theme.spaces.small};
+    color: ${theme.colors.green};
+    height: 40vh;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
-    ${media.greaterThan('medium')`
-      text-align: left;
-      margin: auto;
-    `}
+    h1 {
+      font-size: ${theme.font.sizes.huge};
+    }
   `}
 `
 
