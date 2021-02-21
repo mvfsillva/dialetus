@@ -5,12 +5,12 @@ export const Wrapper = styled.header`
   ${({ theme }) => css`
     display: flex;
     text-align: center;
-    padding: ${theme.spaces.small};
-    color: ${theme.colors.green};
-    height: 40vh;
+    padding: ${theme.spaces.large};
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: ${theme.colors.primary};
+    color: ${theme.colors.black};
 
     h1 {
       font-size: ${theme.font.sizes.huge};
