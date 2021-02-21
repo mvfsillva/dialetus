@@ -37,7 +37,7 @@ export default class NextDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="pt-br">
         <Head />
         <body>
           <Main />
