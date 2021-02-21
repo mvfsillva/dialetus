@@ -37,7 +37,7 @@ const theme: any = {
     primary: '#19E68C',
     secondary: '#0A34FD',
     gray: '#595A5C',
-    darkGreen: '#1db954',
+    darkGreen: '#15883E',
     lightPurple: '#7B8DBA',
     muted: '#E8EFF5',
     black: '#121212',

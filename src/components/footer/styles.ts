@@ -29,7 +29,7 @@ export const Wrapper = styled.footer`
     `}
 
     a {
-      color: ${theme.colors.primary};
+      color: ${theme.colors.darkGreen};
       font-weight: bold;
       text-decoration: none;
       :hover {
