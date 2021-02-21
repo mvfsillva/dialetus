@@ -5,7 +5,7 @@ import { Header, Footer, Card, Input, Regions } from 'components'
 import { useDebounce } from 'hooks'
 import { Container, Loading } from 'layout'
 
-import * as S from './styles'
+import * as S from 'layout/main'
 
 const API = process.env.NEXT_PUBLIC_API_URL
 
