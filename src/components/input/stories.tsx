@@ -1,8 +1,5 @@
-// Packages
-import React from 'react'
 import { FiCalendar } from 'react-icons/fi'
 
-// Component
 import Input from '.'
 
 export default {

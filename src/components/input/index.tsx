@@ -1,7 +1,5 @@
-// Packages
-import React from 'react'
+import { forwardRef } from 'react'
 
-// Styles
 import * as S from './styles'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -9,7 +7,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   icon?: React.ReactElement
 }
 
-const Input = React.forwardRef(
+const Input = forwardRef(
   (props: InputProps, ref?: React.Ref<HTMLInputElement>) => {
     const { disabled, icon, ...restProps } = props
     return (
