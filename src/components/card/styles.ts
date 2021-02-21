@@ -25,7 +25,15 @@ export const Wrapper = styled.div<Props>`
     ${dark && modifiers.dark(theme)};
   `}
 `
-export const Title = styled.h3`
+export const Region = styled.h3`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.medium};
+    color: ${theme.colors.darkGreen};
+    margin-bottom: ${theme.spaces.tiny};
+  `}
+`
+
+export const Title = styled.h4`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.medium};
   `}
