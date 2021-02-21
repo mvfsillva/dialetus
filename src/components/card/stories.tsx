@@ -1,7 +1,4 @@
-// Packages
-import React from 'react'
-
-// Component
+import { mock } from './mock'
 import Card from '.'
 
 export default {
@@ -10,9 +7,5 @@ export default {
 }
 
 export function Default() {
-  return <Card>Busbud light Card</Card>
-}
-
-export function Dark() {
-  return <Card dark>Busbud Dark Card</Card>
+  return <Card {...mock} />
 }

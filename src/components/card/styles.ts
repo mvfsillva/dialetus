@@ -25,3 +25,39 @@ export const Wrapper = styled.div<Props>`
     ${dark && modifiers.dark(theme)};
   `}
 `
+export const Title = styled.h3`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.medium};
+  `}
+`
+
+export const Content = styled.div`
+  ${({ theme }) => css`
+    padding: ${theme.spaces.xsmall} 0;
+
+    > div {
+      margin: ${theme.spaces.tiny} 0;
+    }
+  `}
+`
+
+export const Label = styled.label`
+  ${({ theme }) => css`
+    padding-right: ${theme.spaces.tiny};
+    font-size: ${theme.font.sizes.small};
+    font-weight: 700;
+  `}
+`
+
+export const Span = styled.span`
+  ${({ theme }) => css`
+    display: flex;
+    margin-top: ${theme.spaces.tiny};
+    font-size: ${theme.font.sizes.tiny};
+    font-weight: 400;
+  `}
+`
+
+export const Footer = styled.footer`
+  position: sticky;
+`
