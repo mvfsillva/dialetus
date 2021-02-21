@@ -34,14 +34,14 @@ const theme: any = {
     }
   },
   colors: {
-    primary: '#FBAE16',
-    secondary: '#F19020',
-    blue: '#127CCB',
-    white: '#FFFFFF',
-    black: '#000000',
-    gray: '#5f6368',
-    darkGray: '#3c4043',
-    muted: '#E8EFF5'
+    primary: '#19E68C',
+    secondary: '#0A34FD',
+    gray: '#595A5C',
+    darkGreen: '#1db954',
+    lightPurple: '#7B8DBA',
+    muted: '#E8EFF5',
+    black: '#121212',
+    white: '#FFFFFF'
   },
   spaces: {
     tiny: '0.8rem',
