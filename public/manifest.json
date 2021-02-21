@@ -1,0 +1,20 @@
+{
+  "name": "Dialetos Brasileiros",
+  "short_name": "Dialetus",
+  "description": "Dicionario informal com dialetos brasileiros.",
+  "display": "fullscreen",
+  "start_url": "/",
+  "background_color": "#FFFFFF",
+  "theme_color": "#19E68C",
+  "icons": [{
+      "src": "/images/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
