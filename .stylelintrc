@@ -8,5 +8,13 @@
   "syntax": "scss",
   "rules": {
     "selector-type-no-unknown": null,
+    "selector-pseudo-element-colon-notation": "double",
+    "value-keyword-case": null,
+    "unit-no-unknown": null,
+    "no-duplicate-selectors": null,
+    "declaration-empty-line-before": null,
+    "property-no-unknown": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "declaration-block-no-shorthand-property-overrides": null,
   }
 }
