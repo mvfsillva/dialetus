@@ -1,6 +1,6 @@
 {
   "name": "dialetus",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Marcus Silva <mvfsillva@gmail.com>",
   "scripts": {
     "dev": "next dev",
