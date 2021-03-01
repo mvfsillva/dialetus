@@ -30,7 +30,7 @@ Create a `.env` file at the root of the project. Make sure you follow the [`.env
 ### 03. Run project
 
 ```sh
-$ yarn test
+$ yarn dev
 ```
 
 ### 04. Learn more in the Contributing guide
