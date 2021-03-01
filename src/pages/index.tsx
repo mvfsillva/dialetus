@@ -73,7 +73,7 @@ const Main = ({ regions, dialects }: Props) => {
         <Regions
           data={regions}
           region={region}
-          onClick={(name) => [setRegion(name)]}
+          onClick={(name) => setRegion(name)}
         />
         <S.SearchContainer>
           <Input
