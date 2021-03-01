@@ -10,7 +10,6 @@ export const Link = styled.a<{ active?: boolean }>`
   ${({ theme, active }) => css`
     color: ${active ? theme.colors.black : theme.colors.darkGreen};
     text-decoration: ${active && 'underline'};
-    font-weight: ${active && 'bold'};
     margin: 0.8rem;
     font-size: ${theme.font.sizes.medium};
     text-transform: capitalize;
