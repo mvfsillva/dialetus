@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { FiSearch } from 'react-icons/fi'
 
 import { Header, Footer, Card, Input, Regions } from 'components'
@@ -25,34 +25,39 @@ const Main = ({ regions, dialects }: Props) => {
   const [data, setData] = useState(dialects)
   const [searchTerm, setSearchTerm] = useState('')
   const debouncedSearch = useDebounce(searchTerm, 1000)
+  const initialRender = useRef(true)
 
-  useLayoutEffect(() => {
-    async function changeDialect() {
-      setData([])
-      const data = await fetch(`${API}/regions/${region}/dialects`)
-      const dialectData = await data.json()
-      setData(dialectData)
-    }
-
-    changeDialect()
+  const changeDialect = useCallback(async () => {
+    setData([])
+    const data = await fetch(`${API}/regions/${region}/dialects`)
+    const dialectData = await data.json()
+    setData(dialectData)
   }, [region])
 
-  useLayoutEffect(() => {
-    async function searchDialect() {
-      if (debouncedSearch !== '') {
-        setData([])
-        setRegion('')
-        const data = await fetch(`${API}/search?q=${debouncedSearch}`)
-        const queryData = await data.json()
+  const searchDialect = useCallback(async () => {
+    if (debouncedSearch !== '') {
+      setData([])
+      setRegion('')
+      const data = await fetch(`${API}/search?q=${debouncedSearch}`)
+      const queryData = await data.json()
 
-        return setData(queryData)
-      }
-
-      return setRegion('baianes')
+      return setData(queryData)
     }
 
-    searchDialect()
+    return setRegion('baianes')
   }, [debouncedSearch])
+
+  useEffect(() => {
+    if (initialRender.current) {
+      initialRender.current = false
+    } else {
+      changeDialect()
+    }
+  }, [region, changeDialect])
+
+  useEffect(() => {
+    searchDialect()
+  }, [debouncedSearch, searchDialect])
 
   return (
     <>
@@ -90,7 +95,7 @@ const Main = ({ regions, dialects }: Props) => {
                   region={region}
                   examples={examples}
                   meanings={meanings}
-                  key={slug}
+                  key={`${slug}_${region}`}
                 />
               ))}
             </S.Wrapper>
