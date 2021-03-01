@@ -43,8 +43,6 @@ const Main = ({ regions, dialects }: Props) => {
 
       return setData(queryData)
     }
-
-    return setRegion('baianes')
   }, [debouncedSearch])
 
   useEffect(() => {
@@ -53,11 +51,20 @@ const Main = ({ regions, dialects }: Props) => {
     } else {
       changeDialect()
     }
+    if (region && debouncedSearch) {
+      setSearchTerm('')
+    }
   }, [region, changeDialect])
 
   useEffect(() => {
     searchDialect()
   }, [debouncedSearch, searchDialect])
+
+  useEffect(() => {
+    if (!region && !searchTerm) {
+      setRegion('baianes')
+    }
+  }, [searchTerm])
 
   return (
     <>
@@ -66,7 +73,7 @@ const Main = ({ regions, dialects }: Props) => {
         <Regions
           data={regions}
           region={region}
-          onClick={(name) => [setRegion(name), setSearchTerm('')]}
+          onClick={(name) => [setRegion(name)]}
         />
         <S.SearchContainer>
           <Input
