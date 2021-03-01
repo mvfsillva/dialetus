@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, memo } from 'react'
 
 import { getStateDescription } from 'helpers/dictionary'
 import * as S from './styles'
@@ -38,4 +38,4 @@ function Card(props: Props) {
   )
 }
 
-export default Card
+export default memo(Card)
