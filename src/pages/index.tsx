@@ -51,7 +51,7 @@ const Main = ({ regions, dialects }: Props) => {
     } else {
       changeDialect()
     }
-    if (region && debouncedSearch) {
+    if (region) {
       setSearchTerm('')
     }
   }, [region, changeDialect])
@@ -64,7 +64,7 @@ const Main = ({ regions, dialects }: Props) => {
     if (!region && !searchTerm) {
       setRegion('baianes')
     }
-  }, [searchTerm])
+  }, [searchTerm, region])
 
   return (
     <>
