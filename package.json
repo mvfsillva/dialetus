@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT",
+    "start": "next start",
     "lint:css": "stylelint src",
     "lint": "eslint src",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(ts|tsx)\"",
