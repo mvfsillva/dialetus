@@ -1,5 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { FiSearch } from 'react-icons/fi'
+import GithubCorner from 'react-github-corner'
+import { withTheme } from 'styled-components'
 
 import { Header, Footer, Card, Input, Regions } from 'components'
 import { useDebounce } from 'hooks'
@@ -18,9 +20,12 @@ type Props = {
     slug: string
     region?: string
   }>
+  theme: {
+    colors: Record<string, string>
+  }
 }
 
-const Main = ({ regions, dialects }: Props) => {
+const Main = ({ regions, dialects, theme }: Props) => {
   const [region, setRegion] = useState('baianes')
   const [data, setData] = useState(dialects)
   const [searchTerm, setSearchTerm] = useState('')
@@ -110,6 +115,11 @@ const Main = ({ regions, dialects }: Props) => {
         )}
       </Container>
       <Footer />
+      <GithubCorner
+        octoColor={theme.colors.primary}
+        bannerColor={theme.colors.white}
+        href="https://github.com/dialetus/dialetus"
+      />
     </>
   )
 }
@@ -130,4 +140,4 @@ Main.getInitialProps = async () => {
   }
 }
 
-export default Main
+export default withTheme(Main)
