@@ -17,10 +17,6 @@ export const Wrapper = styled.main`
     ${media.greaterThan('medium')`
       grid-template-columns: 1fr 1fr;
     `}
-
-    ${media.greaterThan('large')`
-      grid-template-columns: 1fr 1fr 1fr;
-    `}
   `}
 `
 
@@ -52,4 +48,32 @@ export const CardFooter = styled.footer`
 
 export const LoadingWrapper = styled(Box)`
   min-height: 30vh;
+  height: 100%;
+  width: 100%;
+`
+export const ExpressionsContainer = styled.div`
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 60rem;
+
+  ${media.greaterThan('medium')`
+  height: 76vh;
+  overflow: auto;
+`}
+`
+export const MapContainer = styled.div`
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  height: 76vh;
+  justify-content: space-between;
+  margin-top: 4rem;
+  width: 100%;
+
+  ${media.lessThan('medium')`
+  flex-direction: column;
+  height: auto;
+`}
 `
