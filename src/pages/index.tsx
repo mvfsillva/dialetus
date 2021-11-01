@@ -3,7 +3,7 @@ import { FiSearch } from 'react-icons/fi'
 import GithubCorner from 'react-github-corner'
 import { withTheme } from 'styled-components'
 
-import { Header, Footer, Card, Input, Regions } from 'components'
+import { Header, Footer, Card, Input, Regions, RegionsMap } from 'components'
 import { useDebounce } from 'hooks'
 import { Container, Loading } from 'layout'
 
@@ -75,11 +75,6 @@ const Main = ({ regions, dialects, theme }: Props) => {
     <>
       <Header />
       <Container>
-        <Regions
-          data={regions}
-          region={region}
-          onClick={(name) => setRegion(name)}
-        />
         <S.SearchContainer>
           <Input
             type="search"
@@ -89,30 +84,42 @@ const Main = ({ regions, dialects, theme }: Props) => {
             onChange={({ target: { value } }) => setSearchTerm(value)}
           />
         </S.SearchContainer>
-        {!data.length ? (
-          <S.LoadingWrapper
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
-          >
-            <Loading />
-          </S.LoadingWrapper>
-        ) : (
-          <>
-            <S.RegionTitle>{region}</S.RegionTitle>
-            <S.Wrapper>
-              {data.map(({ dialect, region, examples, meanings, slug }) => (
-                <Card
-                  title={dialect}
-                  region={region}
-                  examples={examples}
-                  meanings={meanings}
-                  key={`${slug}_${region}`}
-                />
-              ))}
-            </S.Wrapper>
-          </>
-        )}
+        <Regions
+          data={regions}
+          region={region}
+          onClick={(name) => setRegion(name)}
+        />
+        <S.MapContainer>
+          <RegionsMap
+            data={regions}
+            region={region}
+            onClick={(name) => setRegion(name)}
+          />
+          {!data.length ? (
+            <S.LoadingWrapper
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+            >
+              <Loading />
+            </S.LoadingWrapper>
+          ) : (
+            <S.ExpressionsContainer>
+              <S.RegionTitle>{region}</S.RegionTitle>
+              <S.Wrapper>
+                {data.map(({ dialect, region, examples, meanings, slug }) => (
+                  <Card
+                    title={dialect}
+                    region={region}
+                    examples={examples}
+                    meanings={meanings}
+                    key={`${slug}_${region}`}
+                  />
+                ))}
+              </S.Wrapper>
+            </S.ExpressionsContainer>
+          )}
+        </S.MapContainer>
       </Container>
       <Footer />
       <GithubCorner
