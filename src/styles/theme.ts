@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const theme: any = {
   grid: {
     container: '130rem',
@@ -37,11 +38,13 @@ const theme: any = {
     primary: '#19E68C',
     secondary: '#0A34FD',
     gray: '#595A5C',
+    lightGray: '#ddd',
     darkGreen: '#15883E',
     lightPurple: '#7B8DBA',
     muted: '#E8EFF5',
     black: '#121212',
-    white: '#FFFFFF'
+    white: '#FFFFFF',
+    lightGreen: '#9bd4bb'
   },
   spaces: {
     tiny: '0.8rem',
