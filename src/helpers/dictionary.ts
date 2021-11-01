@@ -20,3 +20,8 @@ export const stateDictionary: Record<string, string> = {
 }
 
 export const getStateDescription = (state: string) => stateDictionary[state]
+
+export const getStateByDescription = (description: string) =>
+  (Object.keys(stateDictionary) as Array<string>).find(
+    (key) => stateDictionary[key] === description
+  )
