@@ -1,5 +1,4 @@
 import { ChoroplethBoundFeature } from '@nivo/geo'
-import React from 'react'
 
 import * as S from './styles'
 
