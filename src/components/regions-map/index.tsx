@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef } from 'react'
+import { useState, useEffect, useContext, useRef } from 'react'
 
 import { ResponsiveChoropleth } from '@nivo/geo'
 import { getStateByDescription, getStateDescription } from 'helpers/dictionary'
